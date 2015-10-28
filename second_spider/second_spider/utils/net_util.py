@@ -15,10 +15,16 @@ def loadHtmlSelector(url, method='GET', headers=None, contenttype='application/x
     
     useragent = "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36"
     
-#     if headers is  None :
-#         headers = {"User-Agent":useragent, "content-type":contenttype, "Cookie":cookie}
-    
-    http = httplib2.Http(timeout=0.2)  
-    response, content = http.request(url, method='GET', headers=headers)
-    print str(response.status)
-    return BeautifulSoup(content)
+    if headers is  None :
+        headers = {"User-Agent":useragent, "content-type":contenttype, "Cookie":cookie}
+    try :
+        
+        http = httplib2.Http(timeout=0.2)  
+        response, content = http.request(url, method='GET', headers=headers)
+        print str(response.status)
+        return BeautifulSoup(content)
+        
+    except Exception,e :
+        print repr(e)
+        
+#     return BeautifulSoup(content)

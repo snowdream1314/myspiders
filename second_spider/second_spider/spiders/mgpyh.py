@@ -50,11 +50,11 @@ class mgpyh_Spider(Spider):
 #         self.mongodbitemlist.remove()
 #         print "remove over" 
 
-        self.parseCategory()
+#         self.parseCategory()
         
-#         self.parseItemList()
+        self.parseItemList()
 
-    def parseCategory(self):
+    def parseCategory(self):#OK
         
         print "parseCategory"
         
