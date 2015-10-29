@@ -1,4 +1,4 @@
-#-*-coding:utf-8-*-
+# -*- coding: UTF-8 -*- 
 #-------------------------------------
 # Name: 
 # Purpose:  spider load net
@@ -19,7 +19,7 @@ def loadHtmlSelector(url, method='GET', headers=None, contenttype='application/x
         headers = {"User-Agent":useragent, "content-type":contenttype, "Cookie":cookie}
     try :
         
-        http = httplib2.Http(timeout=0.2)  
+        http = httplib2.Http()  
         response, content = http.request(url, method='GET', headers=headers)
         print str(response.status)
         return BeautifulSoup(content)

@@ -1,4 +1,4 @@
-#-*-coding:utf-8-*-
+# -*- coding: UTF-8 -*- 
 #-------------------------------------
 # Name: 
 # Purpose:  spider item
@@ -21,7 +21,7 @@ class Item:
     originprice = None
     updatetime = None
     
-    def creatItemdic(self,dict2):
+    def createItemdic(self,dict2):
         
         if dict2 == None :
             dict2 = {}

@@ -1,4 +1,4 @@
-#-*-coding:utf-8-*-
+# -*- coding: UTF-8 -*- 
 #-------------------------------------
 # Name: 
 # Purpose: try to write a spider
@@ -41,15 +41,7 @@ class mgpyh_Spider(Spider):
         
     def parse(self,response):
         print "parse"
-#         self.mongodbitemlist.insert({"name":"jck", "age":25, "tall":"175", "weight":65})
-#         print self.mongodbitemlist.find({"name":"jim"})
-#         print self.mongodbitemlist.find().count()
-#         print "OK"
-
-        #ÇåÊı¾İ¿âÊı¾İ
-#         self.mongodbitemlist.remove()
-#         print "remove over" 
-
+        
 #         self.parseCategory()
         
         self.parseItemList()
@@ -61,7 +53,7 @@ class mgpyh_Spider(Spider):
         item_collection_name = "mgpyh_category"
         mongodbitemlist = first_mongodb[self.database][item_collection_name]
         
-        #ÇåÊı¾İ¿âÊı¾İ
+        #æ¸…é™¤æ•°æ®åº“æ•°æ®
 #         mongodbitemlist.remove()
 #         print "remove over"
         
@@ -93,6 +85,7 @@ class mgpyh_Spider(Spider):
                 else :
                     print "exit"
                     return
+           
                 
     def parseItemList(self):
         
@@ -115,8 +108,8 @@ class mgpyh_Spider(Spider):
         item_collection_name = "mgpyh_item"
         mongodbitemlist = first_mongodb[self.database][item_collection_name]
         
-        #Çå³ıÊı¾İ
-#         self.mongodbitemlist.remove()
+        #æ¸…é™¤æ•°æ®åº“æ•°æ®
+#         mongodbitemlist.remove()
 #         print "remove over"
 
         source_url = source['href']
@@ -138,25 +131,25 @@ class mgpyh_Spider(Spider):
             for list in lists :
                 
                 item = Item()
-                item.categoryid = source['id']
+                item.categoryid = source['item_id']
                 
-                #ÌõÄ¿ID 
+                #æ¡ç›®ID 
                 item.itemid = int (list.find("a", {"class":"favorite"}).attrs['data-id'])
                 print item.itemid
                 
-#                 #¸üĞÂ£¬Ö±½ÓÌøµ½ÏÂÒ»¸ö·ÖÀà
+#                 #æ›´æ–°ï¼Œç›´æ¥è·³åˆ°ä¸‹ä¸€ä¸ªåˆ†ç±»
 #                 num = self.mongodbitemlist.find({"itemid":item.itemid}).count()
 #                 if num != 0 : return
                 
-                #Ê±¼ä
+                #æ—¶é—´
                 item.updatetime = int (list.attrs['data-timestamp'])
                 print item.updatetime
                
-                #ÌõÄ¿Ãû³Æ
+                #æ¡ç›®æ ‡é¢˜
                 item.name = list.find("h3").find("a").get_text().strip()
-                print item.name
+#                 print item.name
                  
-                #ÉÌÆ·Í¼Æ¬
+                #å•†å“å›¾ç‰‡
                 item.image = list.find("img", {"alt":True})
                 if item.image :
                     item.image = item.image.attrs['src']
@@ -164,7 +157,7 @@ class mgpyh_Spider(Spider):
                 else :
                     item.image = ""
 
-                #ÉÌÆ·¼Û¸ñ
+                #å•†å“ä»·æ ¼
                 prices = list.find("h3").findAll("em", {"class":"number"})
                 if prices !=[] :
                     item.price = ''
@@ -172,10 +165,10 @@ class mgpyh_Spider(Spider):
                         item.price += price.get_text()
                 else :
                     item.price = ''
-#                     continue    #¹ıÂËÃ»ÓĞ¼Û¸ñµÄÌõÄ¿
-                print item.price        
+#                     continue    #è¿‡æ»¤æ²¡æœ‰ä»·æ ¼çš„æ¡ç›®
+#                 print item.price        
                 
-                #¹ºÂòÁ´½Ó 
+                #è´­ä¹°é“¾æ¥ 
                 item.href = "http://www.mgpyh.com" + str (list.find("div", {"class":"item-right"}).find("a", {"class":"mp-btn-red"}).attrs['href'])
                 print item.href     
         
@@ -184,36 +177,40 @@ class mgpyh_Spider(Spider):
                 firecountnum = int(firecount)
                 print "firecountnum is %d" %firecountnum
                 
-                #ÊÕ²ØÊı
+                #åŸæ–‡é“¾æ¥
+                article_href = "http://www.mgpyh.com" + str (list.find("h3").find("a").attrs['href'])
+                print article_href
+                
+                #æ”¶è—æ•°
                 favcount = itemicon.find("a", {"class":"favorite"}).find("span", {"class":"count"}).get_text()
                 favcountnum = int(favcount)
                 print "favcountnum is %d" %favcountnum      
                 
-                #ÆÀÂÛÊı
+                #è¯„è®ºæ•°
                 commentcount = itemicon.find("li").find("a", {"class":None, "data-id":None}).find("span", {"class":"count"}).get_text()
                 commentcountnum = int(commentcount)
                 print "commentcountnum is %d" %commentcountnum      
                 
-                item_dict = item.createItemDic({"fire_count":firecountnum, "fav_count":favcountnum, "comment_count":commentcountnum})
+                item_dict = item.createItemdic({"article_href":article_href, "fire_count":firecountnum, "fav_count":favcountnum, "comment_count":commentcountnum})
                 print item_dict 
                  
-                #ÅĞ¶ÏÊÇ·ñÒÑ¾­ÅÀÈ¡
+                #åˆ¤æ–­æ˜¯å¦å·²ç»çˆ¬å–
                 num = mongodbitemlist.find({"itemid":item.itemid}).count()
                 if num == 0 :
-                    item_list.append(item_dict)
+#                     item_list.append(item_dict)
                  
-#                     self.mongodbitemlist.insert(dict)
-#                     print "insert sucessfully"
+                    mongodbitemlist.insert(item_dict)       #ä¸€æ¬¡æ’å…¥ä¸€æ¡
+                    print "insert sucessfully"
                 else :
                     print ("item exits, num is %s"  % num)
 #                     continue
-                    return      #ÍË³ö,Ìøµ½ÏÂÒ»¸ö·ÖÀà£¬ÓĞ¸üĞÂ¹¦ÄÜ
+                    return      #é€€å‡º,è·³åˆ°ä¸‹ä¸€ä¸ªåˆ†ç±»ï¼Œæœ‰æ›´æ–°åŠŸèƒ½
             
-            #Ò»´Î²åÈëÕûÒ³ËùÓĞÌõÄ¿
-            print item_list
-            if len(item_list) != 0 :
-                mongodbitemlist.insert(item_list) 
-                print "insert sucessfully"  
+            #ä¸€æ¬¡æ’å…¥æ•´é¡µæ‰€æœ‰æ¡ç›®
+#             print item_list
+#             if len(item_list) != 0 :
+#                 mongodbitemlist.insert(item_list) 
+#                 print "insert sucessfully"  
             pagenum += 1  
             source_url = source['href'] + "?page=" + str(pagenum)
 #             if next_page :
