@@ -16,7 +16,7 @@ from second_spider.utils.net_util import loadHtmlSelector
 
 
 # from second_spider.items import mgpyhItem
-class mgpyh_Spider(Spider):
+class mgpyh_Spider(Spider):#OK
     '''
     classdocs
      
@@ -51,10 +51,10 @@ class mgpyh_Spider(Spider):
         print "parseCategory"
         
         item_collection_name = "mgpyh_category"
-        mongodbitemlist = first_mongodb[self.database][item_collection_name]
+        mongodbCategoryList = first_mongodb[self.database][item_collection_name]
         
         #清除数据库数据
-#         mongodbitemlist.remove()
+#         mongodbCategoryList.remove()
 #         print "remove over"
         
         url = "http://www.mgpyh.com/"
@@ -73,14 +73,14 @@ class mgpyh_Spider(Spider):
             
             id = 1
             for review in reviews :
-                num = mongodbitemlist.find({"item_id":id}).count()
+                num = mongodbCategoryList.find({"item_id":id}).count()
                 if num == 0 :
                     name = review.find("a").get_text().strip()
                     href =  "http://www.mgpyh.com" + str(review.find("a").attrs['href'])
                     print id 
                     print name
                     print href
-                    mongodbitemlist.insert({"item_id":id, "item_name":name, "href":href})
+                    mongodbCategoryList.insert({"item_id":id, "item_name":name, "href":href})
                     id += 1
                 else :
                     print "exit"
@@ -92,9 +92,9 @@ class mgpyh_Spider(Spider):
         print "parseItemList"
         
         item_collection_name = "mgpyh_category"
-        mongodb = first_mongodb[self.database][item_collection_name]
+        mongodbItemList = first_mongodb[self.database][item_collection_name]
         
-        sources = mongodb.find()
+        sources = mongodbItemList.find()
         for source in sources :
             print source['item_name']
             print source['href']
@@ -106,10 +106,10 @@ class mgpyh_Spider(Spider):
         print "mgpyh"
         
         item_collection_name = "mgpyh_item"
-        mongodbitemlist = first_mongodb[self.database][item_collection_name]
+        mongodbItem = first_mongodb[self.database][item_collection_name]
         
         #清除数据库数据
-#         mongodbitemlist.remove()
+#         mongodbItem.remove()
 #         print "remove over"
 
         source_url = source['href']
@@ -195,11 +195,11 @@ class mgpyh_Spider(Spider):
                 print item_dict 
                  
                 #判断是否已经爬取
-                num = mongodbitemlist.find({"itemid":item.itemid}).count()
+                num = mongodbItem.find({"itemid":item.itemid}).count()
                 if num == 0 :
 #                     item_list.append(item_dict)
                  
-                    mongodbitemlist.insert(item_dict)       #一次插入一条
+                    mongodbItem.insert(item_dict)       #一次插入一条
                     print "insert sucessfully"
                 else :
                     print ("item exits, num is %s"  % num)
