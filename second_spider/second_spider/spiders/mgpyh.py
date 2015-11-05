@@ -99,7 +99,7 @@ class mgpyh_Spider(Spider):#OK
             print source['item_name']
             print source['href']
             self.mgpyh(source)
-            
+            print "all done"
             
     def mgpyh(self,source):
         

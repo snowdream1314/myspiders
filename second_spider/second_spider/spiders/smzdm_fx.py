@@ -113,6 +113,8 @@ class smzdm_fx_Spider(Spider):
 
         source_url = source['href']
         source_name = source['item_name']
+        if source['item_id'] == 1 :
+            source_url = "http://faxian.smzdm.com/fenlei/diannaoshuma/p2763"
         print source_name
         print source_url 
         
@@ -148,7 +150,7 @@ class smzdm_fx_Spider(Spider):
                 
                 #条目名称  
                 item.name = list.find("h2", {"class":"itemName"}).find("span", {"class":"black"}).get_text().strip()
-                print item.name
+#                 print item.name
                   
                 if "优惠券".decode('utf-8') in item.name : continue    #过滤非商品条目
                 if "活动".decode('utf-8') in item.name : continue
@@ -199,20 +201,26 @@ class smzdm_fx_Spider(Spider):
                     originmall = ""
                 print originmall
                 
+#                 content_item = article_selector.find("article", {"class":"article-details"}).find("div", {"class":"item-box"})
+#                 if content_item :
                 #优惠力度
-                youhui_content = article_selector.find("div", {"class":"item-box item-preferential"}).find("div", {"class":"inner-block"})
+                youhui_content = article_selector.find("div", {"class":"item-box item-preferential"})
                 if youhui_content :
-                    youhui_content = youhui_content.find("p").get_text().replace("\t","").replace("\n", "").replace("\r", "").strip()
+                    youhui_content = youhui_content.find("div", {"class":"inner-block"})
+                    if youhui_content :
+                        youhui_content = youhui_content.find("p").get_text().replace("\t","").replace("\n", "").replace("\r", "").strip()
+                    else :
+                        youhui_content = ""
+                    #爆料原文
+                    baoliao_content = article_selector.find("div", {"class":"item-box item-preferential"}).find("div", {"class":"baoliao-block"})
+                    if baoliao_content :
+                        baoliao_content = baoliao_content.find("p").get_text().replace("\t","").replace("\n", "").replace("\r", "").strip()
+                    else :
+                        baoliao_content = ""
                 else :
-                    youhui_content = ""
-#                 print youhui_content
-                
-                #爆料原文
-                baoliao_content = article_selector.find("div", {"class":"item-box item-preferential"}).find("div", {"class":"baoliao-block"})
-                if baoliao_content :
-                    baoliao_content = baoliao_content.find("p").get_text().replace("\t","").replace("\n", "").replace("\r", "").strip()
-                else :
+                    youhui_content = article_selector.find("article", {"class":"article-details"}).find("div", {"class":"inner-block"}).get_text().replace("\t","").replace("\n", "").replace("\r", "").strip()
                     baoliao_content = ""
+#                 print youhui_content
 #                 print baoliao_content
                 
                 #商品介绍
@@ -233,7 +241,11 @@ class smzdm_fx_Spider(Spider):
                                     item_description = ""
                         description_count += 1
 #                 print item_description
-                
+#                 else :
+#                     baoliao_content = article_selector.find("article", {"class":"article-details"}).find("div", {"class":"inner-block"}).find("p", {"itemprop":"description"}).get_text().replace("\t","").replace("\n", "").replace("\r", "").strip()
+#                     youhui_content = ""
+#                     item_description = ""
+                    
                 #不推荐数
                 badcount = article_selector.find("div", {"class":"score_rate"}).find("span", {"id":"rating_unworthy_num"}).get_text().strip()
                 badcountnum = int(badcount)
