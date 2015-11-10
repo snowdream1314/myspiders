@@ -13,6 +13,7 @@ from scrapy.spiders import Spider
 
 from second_spider.conf.config import first_mongodb
 from second_spider.items.item import Item
+from second_spider.utils.color import Color
 from second_spider.utils.net_util import loadHtmlSelector
 
 
@@ -110,17 +111,22 @@ class smzdm_fx_Spider(Spider):
         #清除数据库数据
 #         mongodbItem.remove()
 #         print "remove over"
-
+        clr = Color()   #CMD终端分颜色打印
+        
         source_url = source['href']
         source_name = source['item_name']
-        if source['item_id'] == 1 :
-            source_url = "http://faxian.smzdm.com/fenlei/diannaoshuma/p2763"
-        print source_name
-        print source_url 
+        if source['item_id'] < 3 : return
+        if source['item_id'] == 3 :
+            source_url = "http://faxian.smzdm.com/fenlei/yundonghuwai/p34"
+        clr.print_red_text(source_url)
+        clr.print_red_text(source_name)    
+#         print source_name
+#         print source_url 
         
         while 1 :
             
-            print source_url
+#             print source_url
+            clr.print_red_text(source_url)
             
             selector =  loadHtmlSelector(source_url, headers=None)
             if selector is None : return
@@ -134,12 +140,13 @@ class smzdm_fx_Spider(Spider):
                 
                 #条目ID
                 item.itemid = int (list.attrs['articleid'].split("_")[-1])
+                clr.print_blue_text(item.itemid)
                 print item.itemid
                 
                 #更新，直接跳到下一个分类
-                num = mongodbItem.find({"itemid":item.itemid}).count()
+#                 num = mongodbItem.find({"itemid":item.itemid}).count()
 #                 if num != 0 : return    
-                if num != 0 : continue  #暂停，继续爬取
+#                 if num != 0 : continue  #暂停，继续爬取
                 
                 #时间  
                 item.updatetime = int (list.attrs['timesort'])
@@ -174,8 +181,9 @@ class smzdm_fx_Spider(Spider):
 #                 print item.price
                 
                 #购买链接  
-                item.href = list.find("div", {"class":"item_buy_mall"}).find("a", {"class":"directLink"}).attrs['href']     
-                print item.href
+                item.href = list.find("div", {"class":"item_buy_mall"}).find("a", {"class":"directLink"}).attrs['href']
+                clr.print_blue_text(item.href)     
+#                 print item.href
                 
                 #推荐数  
                 goodcount = list.find("div", {"class":"zan_fav_com"}).find("a", {"class":"zan"}).find("em").get_text()      #“值”数
@@ -189,7 +197,8 @@ class smzdm_fx_Spider(Spider):
                 
                 #文章链接
                 article_url =  list.find("h2", {"class":"itemName"}).find("a").attrs['href']  
-                print article_url
+#                 print article_url
+                clr.print_blue_text(article_url)
                 
                 article_selector = loadHtmlSelector(article_url, headers=None)
                 
@@ -258,17 +267,20 @@ class smzdm_fx_Spider(Spider):
                   
                 item_dict = item.createItemdic({"originmall":originmall, "baoliao_content":baoliao_content, "youhui_content":youhui_content, "item_description":item_description, "bad_count":badcountnum, "fav_count":favcountnum, "article_url":article_url, "article_time":article_time, "good_count":goodcountnum, "comment_count":commentcountnum})
                 print item_dict 
+#                 clr.print_green_text(item_dict)
                 
                 #判断是否已经爬取  
                 num = mongodbItem.find({"itemid":item.itemid}).count()
                 if num == 0 :
 #                     item_list.append(item_dict)
                     mongodbItem.insert(item_dict)    #一次插入一个条目
-                    print "insert successfully"
+                    clr.print_red_text("insert successfully")
+#                     print "insert successfully"
                 else :
 #                     mongodbItem.update({"itemid":item.itemid}, item_dict)
 #                     print "update over"
-                    print ("item exits, num is %s"  % num)
+                    clr.print_yellow_text(("item exits, num is %s"  % num))
+#                     print ("item exits, num is %s"  % num)
                     continue
             
             #一次插入一页所有条目      
