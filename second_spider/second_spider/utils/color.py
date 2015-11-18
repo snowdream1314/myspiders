@@ -1,4 +1,11 @@
 # -*- coding: UTF-8 -*- 
+#-------------------------------------
+# Name: 
+# Purpose: windows CMD终端打印彩色字体（调用windows API）
+# Author:
+# Date: 2015-11-10
+#-------------------------------------
+
 import ctypes
 
 STD_INPUT_HANDLE = -10
@@ -19,6 +26,7 @@ BACKGROUND_INTENSITY = 0x80 # background color is intensified.
 
 class Color:
     std_out_handle = ctypes.windll.kernel32.GetStdHandle(STD_OUTPUT_HANDLE)
+#     std_out_handle = GetStdHandle(STD_OUTPUT_HANDLE)
     
     def set_cmd_color(self, color, handle=std_out_handle):
         bool = ctypes.windll.kernel32.SetConsoleTextAttribute(handle, color)

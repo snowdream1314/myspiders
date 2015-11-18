@@ -13,6 +13,7 @@ from scrapy.spiders import Spider
 
 from second_spider.conf.config import first_mongodb
 from second_spider.items.item import Item
+from second_spider.utils.color import Color
 from second_spider.utils.net_util import loadHtmlSelector
 
 
@@ -106,6 +107,8 @@ class smzdm_yh_Spider(Spider):#OK
         item_collection_name = "smzdm_yh_item"
         mongodbItem = first_mongodb[self.database][item_collection_name]
         
+        clr = Color()   #CMD终端分颜色打印
+        
         #清除数据库数据
 #         mongodbItem.remove()
 #         print "remove over"
@@ -113,8 +116,10 @@ class smzdm_yh_Spider(Spider):#OK
 #         if source['item_id'] == 13 :
 #             source_url = "http://www.smzdm.com/youhui/fenlei/jiajujiazhuang/p17"
         source_name = source['item_name']
-        print source_name
-        print source_url 
+        clr.print_red_text(source_name)
+        clr.print_red_text(source_url)
+#         print source_name
+#         print source_url 
         
         while 1 :
               
@@ -135,8 +140,11 @@ class smzdm_yh_Spider(Spider):#OK
                 print item.itemid
                 
                 #更新，直接跳到下一个分类
-#                 item_num = mongodbItem.find({"itemid":item.itemid}).count()
-#                 if item_num != 0 : return
+                item_num = mongodbItem.find({"itemid":item.itemid}).count()
+                if item_num != 0 : 
+                    clr.print_red_text("%s update over " %source_name)
+#                     print "%s update over " %source_name
+                    return
 #                 if item_num != 0 : continue     #暂停，继续爬取
                       
                 item.updatetime = int (div.attrs['timesort'])
@@ -243,8 +251,8 @@ class smzdm_yh_Spider(Spider):#OK
                     mongodbItem.insert(item_dict)
                     print "insert successfully"
                 else :
-                    mongodbItem.update({"itemid":item.itemid}, item_dict)
-                    print "update over"
+#                     mongodbItem.update({"itemid":item.itemid}, item_dict)
+#                     print "update over"
                     print ("item exits, num is %s"  % item_num)
                     continue
             

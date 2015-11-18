@@ -46,3 +46,6 @@ venv
 
 #python
 .pyc
+
+#html
+.html

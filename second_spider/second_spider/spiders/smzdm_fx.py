@@ -115,9 +115,9 @@ class smzdm_fx_Spider(Spider):
         
         source_url = source['href']
         source_name = source['item_name']
-        if source['item_id'] < 3 : return
-        if source['item_id'] == 3 :
-            source_url = "http://faxian.smzdm.com/fenlei/yundonghuwai/p34"
+        if source['item_id'] < 6 : return
+        if source['item_id'] == 6 :
+            source_url = "http://faxian.smzdm.com/fenlei/muyingyongpin/p580"
         clr.print_red_text(source_url)
         clr.print_red_text(source_name)    
 #         print source_name
@@ -144,9 +144,11 @@ class smzdm_fx_Spider(Spider):
                 print item.itemid
                 
                 #更新，直接跳到下一个分类
-#                 num = mongodbItem.find({"itemid":item.itemid}).count()
+                num = mongodbItem.find({"itemid":item.itemid}).count()
 #                 if num != 0 : return    
-#                 if num != 0 : continue  #暂停，继续爬取
+                if num != 0 : 
+                    clr.print_yellow_text("item exits")
+                    continue  #暂停，继续爬取
                 
                 #时间  
                 item.updatetime = int (list.attrs['timesort'])
@@ -182,7 +184,7 @@ class smzdm_fx_Spider(Spider):
                 
                 #购买链接  
                 item.href = list.find("div", {"class":"item_buy_mall"}).find("a", {"class":"directLink"}).attrs['href']
-                clr.print_blue_text(item.href)     
+#                 clr.print_blue_text(item.href)     
 #                 print item.href
                 
                 #推荐数  
@@ -208,7 +210,7 @@ class smzdm_fx_Spider(Spider):
                     originmall = originmall.get_text()
                 else :
                     originmall = ""
-                print originmall
+#                 print originmall
                 
 #                 content_item = article_selector.find("article", {"class":"article-details"}).find("div", {"class":"item-box"})
 #                 if content_item :
