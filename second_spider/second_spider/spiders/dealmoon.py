@@ -23,7 +23,6 @@ from second_spider.utils.color import Color
 from second_spider.utils.net_util import loadHtmlSelector
 
 
-# from pygments.lexers._postgres_builtins import SOURCE_URL
 class dealmoon_Spider(Spider):
     '''
     classdocs
@@ -145,8 +144,9 @@ class dealmoon_Spider(Spider):
         source_name = source['item_name']
         clr.print_red_text(source_url)
         clr.print_red_text(source_name)
-        if source['item_id'] == 1 :
-            source_url = "http://cn.dealmoon.com/Clothing-Jewelry-Bags/5"
+        if source['item_id'] < 3 : return
+        if source['item_id'] == 3 :
+            source_url = "http://cn.dealmoon.com/Health-Personal-Care/46"
 #         print source_name
 #         print source_url 
         

@@ -115,9 +115,9 @@ class smzdm_fx_Spider(Spider):
         
         source_url = source['href']
         source_name = source['item_name']
-        if source['item_id'] < 6 : return
-        if source['item_id'] == 6 :
-            source_url = "http://faxian.smzdm.com/fenlei/muyingyongpin/p580"
+        if source['item_id'] < 7 : return
+        if source['item_id'] == 7 :
+            source_url = "http://faxian.smzdm.com/fenlei/riyongbaihuo/p433"
         clr.print_red_text(source_url)
         clr.print_red_text(source_name)    
 #         print source_name
