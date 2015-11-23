@@ -25,5 +25,6 @@ from django.shortcuts import render
 # def add2(request,a,b):
 #     c = int(a) + int(b)
 #     return HttpResponse("<a href="/add/4/5/">link</a>")
+
 def home(request):
     return render(request, 'home.html')

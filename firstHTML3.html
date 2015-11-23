@@ -6,10 +6,12 @@
     <style type="text/css">
 
     #search{padding-bottom:100px;text-align:center;*z-index:1}  <!-- search对应 <div id ="search"> -->
+    
     body{font:12px arial;text-align:center;background:#fff}
-
+    <!-- #form{margin:22px auto 0;width:641px;text-align:left;z-index:100}
+    #fm{position:relative} -->
     body,p,form,ul,li{margin:0;padding:0;list-style:none}
-
+    
     #ftConw{width:720px;margin:0 auto}
 
     input{border:0;padding:0}
@@ -64,10 +66,10 @@
     }
  .center{
         position:absolute;
-        top:34.3%;
+        top:34.5%;
         right:25%;
         left:25%;
-    }    
+    }
  .menu {
         position:relative;
         width:438px;
@@ -101,9 +103,11 @@
 
 <body>
 <div id="search">
-    <span class="center">
-        <form id="form" class="fm"><span class="ipt_wr"><input id="search_input" class="ipt" value="" autocomplete="off" onblur="showAndHide('hot_word','hide');"></span><span class="btn_wr"><input id="search_input" class="btn" type="submit" value='百度一下' onclick=""></span></form>
-    </span>
+    <div id="head">
+        <span class="center">
+            <span class="ipt_wr"><input id="search_input" class="ipt" value="" autocomplete="off" onblur="showAndHide('hot_word','hide');"></span><span class="btn_wr"><input id="search_input" class="btn" type="submit" value='百度一下' onclick=""></span>
+        </span>
+    </div>
     <div id="search_button" onclick="search()"></div>
     <div class="menu" id="hot_word">
         <div class="menu2">
