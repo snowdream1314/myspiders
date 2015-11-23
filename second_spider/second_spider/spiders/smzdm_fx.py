@@ -115,9 +115,9 @@ class smzdm_fx_Spider(Spider):
         
         source_url = source['href']
         source_name = source['item_name']
-        if source['item_id'] < 7 : return
-        if source['item_id'] == 7 :
-            source_url = "http://faxian.smzdm.com/fenlei/riyongbaihuo/p1390"
+        if source['item_id'] < 8 : return
+        if source['item_id'] == 8 :
+            source_url = "http://faxian.smzdm.com/fenlei/shipinbaojian/p286"
         clr.print_red_text(source_url)
         clr.print_red_text(source_name)    
 #         print source_name
@@ -126,7 +126,7 @@ class smzdm_fx_Spider(Spider):
         while 1 :
             
 #             print source_url
-            clr.print_red_text(source_url)
+            clr.print_red_text(source_url)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
             
             selector =  loadHtmlSelector(source_url, headers=None)
             if selector is None : return
