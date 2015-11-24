@@ -144,9 +144,9 @@ class dealmoon_Spider(Spider):
         source_name = source['item_name']
         clr.print_red_text(source_url)
         clr.print_red_text(source_name)
-        if source['item_id'] < 9 : return
-        if source['item_id'] == 9 :
-            source_url = "http://cn.dealmoon.com/Electronics/81"
+        if source['item_id'] < 17 : return
+        if source['item_id'] == 17 :
+            source_url = "http://cn.dealmoon.com/Everything-Else/39"
 #         print source_name
 #         print source_url 
         
