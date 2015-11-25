@@ -8,7 +8,7 @@
 
 <div id="search">
     <span class="center">
-        <form id="form" class="fm"><span class="ipt_wr"><input id="search_input" class="ipt" value="" autocomplete="off" onblur="showAndHide('hot_word','hide');"></span><span class="btn_wr"><input id="search_input" class="btn" type="button" value='百度一下' onclick=javascript:jump()></span></form>
+        <form id="form" class="fm"><span class="ipt_wr"><input type="text" id="search_input" class="ipt" autocomplete="off"  onkeydown="return Entpress(event);" /></span><span class="btn_wr"><input id="search_btn" class="btn" type="button" value='百度一下' onclick=javascript:jump() /></span></form>
     </span>
     <div id="search_button" onclick="search()"></div>
     <div class="menu" id="hot_word">

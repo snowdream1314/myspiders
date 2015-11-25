@@ -1,6 +1,30 @@
-
+/*搜索按钮点击事件*/
 function jump(){
     window.location.href="http://news.baidu.com/";
+}
+
+//监听回车键按下事件
+/* function search_now(){
+    if (window.event.keyCode==13){
+        document.getElementById('search_btn').onclick();
+    }
+} */
+
+/*监听输入框回车按下事件*/
+function Entpress(evt){
+    /* event=event || window.event; */
+    evt = (evt) ? evt : ((window.event) ? window.event : "")
+    keyCode = evt.keyCode ? evt.keyCode : (evt.which ? evt.which : evt.charCode);
+    if (event.keyCode==13){
+        var val=document.getElementById('search_input').value;
+        if (val==''){
+            alert('请输入搜索内容');
+            return false;
+        } 
+        /* document.getElementById('search_btn').onclick(); */
+        window.location.href="http://news.baidu.com/";      /*跳转链接*/
+        return false;
+    }
 }
 
 var hotWords = [{name:"value1"},{name:"value2"},{name:"value3"}];
