@@ -1,6 +1,19 @@
+/* $(document).ready(function) {
+    $("#categ").mouseover(function){
+        $("#categ_detail").fadIn();
+    }
+}
+ */
+
 /*搜索按钮点击事件*/
 function jump(){
+    var val=document.getElementById('search_input').value;
+    if (val==''){
+        alert('请输入搜索内容');
+        return false;
+    } 
     window.location.href="http://news.baidu.com/";
+    return false;
 }
 
 //监听回车键按下事件
