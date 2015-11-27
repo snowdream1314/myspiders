@@ -29,13 +29,29 @@
     text-decoration: none;  /*去掉了下划线*/
     text-shadow: 0 1px 0 #000;  /*字体阴影：右、下、颜色变淡、颜色*/
 }
+#navig a:hover {
+	color: #111;
+    text-decoration:underline;
+}
 
+/*----------------------------------------*/
 /*输入框和按钮的位置*/
 #navig li span {
     position:relative;
-    top:12px;
+    top:6px;
 }
 
+/*----------------登录和注册--------------*/
+#login {
+    position: absolute;
+    top: 2px;
+    left: 690px;
+}
+#register {
+    position: absolute;
+    top: 2px;
+    left: 650px;
+ }
 /*-----------------------------------------*/
 
 /* #navig li
@@ -81,3 +97,4 @@
     float: none;
     text-transform: none;   /*去掉大写*/
 } */
+

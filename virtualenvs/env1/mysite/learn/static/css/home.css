@@ -7,6 +7,7 @@ body,p,form,ul,li{margin:0;padding:0;list-style:none}
 
 input{border:0;padding:0}
 
+/*-----------按钮和输入框----------*/
  .ipt_wr { 
       
         height:34px;
@@ -60,7 +61,21 @@ input{border:0;padding:0}
         top:34.3%;
         right:25%;
         left:25%;
-    }    
+    } 
+
+/*----------------------登录和注册---------------------*/  
+/*  .login {
+        position: absolute;
+        top: 12px;
+        left: 700px;
+}
+ .register {
+        position: absolute;
+        top: 12px;
+        left: 700px;
+ } */
+ 
+/*---------------------热词部分-----------------------*/ 
  .menu {
         position:relative;
         width:438px;

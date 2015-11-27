@@ -12,7 +12,8 @@ function jump(){
         alert('请输入搜索内容');
         return false;
     } 
-    window.location.href="http://news.baidu.com/";
+    window.location.href="http://127.0.0.1:8000/show/";
+    document.getElementById('search_input').value = val;
     return false;
 }
 
@@ -35,7 +36,8 @@ function Entpress(evt){
             return false;
         } 
         /* document.getElementById('search_btn').onclick(); */
-        window.location.href="http://news.baidu.com/";      /*跳转链接*/
+        window.location.href="http://127.0.0.1:8000/show/";      /*跳转链接*/
+        document.getElementById('search_input').value = val;
         return false;
     }
 }
