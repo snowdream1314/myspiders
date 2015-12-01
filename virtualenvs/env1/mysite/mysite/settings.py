@@ -75,7 +75,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-
+DBNAME = 'test_import'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',

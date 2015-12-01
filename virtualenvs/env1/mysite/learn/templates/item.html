@@ -5,8 +5,71 @@
 <body>
 
 {% include "header_item.html" %}
+<p class='item_count'>一共有 {{num}} 条记录</p>
 
+<!--结果列表-->
+<div class="content_left">
+{% for item in items.object_list %}
+    <div class="container">
+        <h3 class="title"><a href="{{ item.href}}" target="_blank">{{ item.name }}</a></p>
+        <a href="{{ item.href}}" target="_blank"><img src="{{ item.image}}"></img></a>
+    </div>
+{% endfor %}
+</div>
+<!-- 使用django的paginator实现分页显示方式 -->
+<div id="page">
+{% if page_objects.has_previous %}
+<a href="?page={{ page_objects.previous_page_number }}" class="n"><上一页</a>
+{% endif %}
+{% for page_number in page_range %}
+{% ifequal page_number  items.number %}
+    <a href="?page={{ page_number }}" class="active" title="pre"><span class="fk"><i class="icon-bear-pn"></i></span><span class="pc">{{ page_number }}</span></a>
+{% else %}
+    <a href="?page={{ page_number }}" title="第{{ page_number }}页"><span class="pc">{{ page_number }}</span></a>
+{% endifequal %}
+{% endfor %}
+{% if page_objects.has_next %}
+    <a href="?page={{ page_objects.next_page_number }}" class="n" title="Next">下一页</a>
+{% endif %}  
+<b>{%if page_objects.paginator.num_pages%}共 {{ page_objects.paginator.num_pages }} 页{%endif%}</b>
+</div>
 
+<!-- 另一种分页显示方式 -->
+<!-- <p>
+{% if topics.has_previous %}
+  <a href="http://127.0.0.1:8000/show/?page={{ items.previous_page_number }}">Previous</a>
+  {% endif %}
+  {# items.paginator.number_pages 返回总页数 #}
+  Page {{ items.number }} of {{ items.paginator.num_pages }}.
+{% if items.has_next %}
+  <a href="http://127.0.0.1:8000/show/?page={{ items.next_page_number }}">Next</a>
+{% endif %}
+</p> -->
+
+<!--分页-->
+<!-- <div id="page">
+    <a href="" class="n"><上一页</a>
+    <a href=""><span class="fk"><i class="icon-bear-pn"></i></span><span class="pc">1</span></a>
+    <a href=""><span class="fk"><i class="icon-bear-pn"></i></span><span class="pc">2</span></a>
+    <a href=""><span class="fk"><i class="icon-bear-pn"></i></span><span class="pc">3</span></a>
+    <a href=""><span class="fk"><i class="icon-bear-pn"></i></span><span class="pc">4</span></a>
+    <a href=""><span class="fk"><i class="icon-bear-pn"></i></span><span class="pc">5</span></a>
+    <a href=""><span class="fk"><i class="icon-bear-pn"></i></span><span class="pc">6</span></a>
+    <a href=""><span class="fk"><i class="icon-bear-pn"></i></span><span class="pc">7</span></a>
+    <a href=""><span class="fk"><i class="icon-bear-pn"></i></span><span class="pc">8</span></a>    
+    <a href="" class="n">下一页></a>
+</div> -->
+
+<!--回到顶部-->
+<div id="top" data-toggle="tooltip" data-placement="left" title="回到顶部">
+  <a href="javascript:;">
+    <div class="arrow"></div>
+    <div class="stick"></div>
+  </a>
+</div>
+<!-- <div id="top">
+    <a href="#top" target="_self">返回顶部</a>
+</div> -->
 
 
 </body>

@@ -115,9 +115,9 @@ class smzdm_fx_Spider(Spider):
         
         source_url = source['href']
         source_name = source['item_name']
-        if source['item_id'] < 13 : return
-        if source['item_id'] == 13 :
-            source_url = "http://faxian.smzdm.com/fenlei/jiajujiazhuang/p407"
+        if source['item_id'] < 15 : return
+        if source['item_id'] == 15 :
+            source_url = "http://faxian.smzdm.com/fenlei/qitafenlei/p192"
         clr.print_red_text(source_url)
         clr.print_red_text(source_name)    
 #         print source_name
@@ -125,8 +125,8 @@ class smzdm_fx_Spider(Spider):
         
         while 1 :
             
-#             print source_url
-            clr.print_red_text(source_url)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+            print source_url
+#             clr.print_red_text(source_url)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
             
             selector =  loadHtmlSelector(source_url, headers=None)
             if selector is None : return
@@ -140,14 +140,14 @@ class smzdm_fx_Spider(Spider):
                 
                 #条目ID
                 item.itemid = int (list.attrs['articleid'].split("_")[-1])
-                clr.print_blue_text(item.itemid)
+#                 clr.print_blue_text(item.itemid)
                 print item.itemid
                 
                 #更新，直接跳到下一个分类
                 num = mongodbItem.find({"itemid":item.itemid}).count()
 #                 if num != 0 : return    
                 if num != 0 : 
-                    clr.print_yellow_text("item exits")
+#                     clr.print_yellow_text("item exits")
                     continue  #暂停，继续爬取
                 
                 #时间  
@@ -184,7 +184,7 @@ class smzdm_fx_Spider(Spider):
                 
                 #购买链接  
                 item.href = list.find("div", {"class":"item_buy_mall"}).find("a", {"class":"directLink"}).attrs['href']
-#                 clr.print_blue_text(item.href)     
+                clr.print_blue_text(item.href)     
 #                 print item.href
                 
                 #推荐数  
@@ -269,7 +269,7 @@ class smzdm_fx_Spider(Spider):
                   
                 item_dict = item.createItemdic({"originmall":originmall, "baoliao_content":baoliao_content, "youhui_content":youhui_content, "item_description":item_description, "bad_count":badcountnum, "fav_count":favcountnum, "article_url":article_url, "article_time":article_time, "good_count":goodcountnum, "comment_count":commentcountnum})
                 print item_dict 
-#                 clr.print_green_text(item_dict)
+                clr.print_green_text(item_dict)
                 
                 #判断是否已经爬取  
                 num = mongodbItem.find({"itemid":item.itemid}).count()
