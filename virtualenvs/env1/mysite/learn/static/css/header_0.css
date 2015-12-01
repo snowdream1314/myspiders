@@ -1,0 +1,78 @@
+#menu, #menu ul {
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+#menu {     /*id="menu"的元素属性*/
+   /*  width: 960px; */
+    height: 38px;
+    margin: 0 auto;
+    border: 1px solid #222;  /*边框*/
+    background-color: #FFF;  /*背景颜色*/
+    background-image: linear-gradient(#444, #111);
+    border-radius: 1px; /*边框圆弧*/
+    box-shadow: 0 1px 1px #777; /*边框阴影*/
+}
+
+#menu li {
+	float: left;
+	position: relative;
+}
+#menu >: first-child {
+    margin-left:150px;
+}
+#menu a {   /*id="menu"的元素下面的所有a标签*/
+    float: left;
+    padding: 12px 30px; /*上和右内边距*/
+    color: #999;
+    text-transform: uppercase;  /*字符大写*/
+    font: bold 12px Arial, Helvetica;   /*字体样式：粗细、大小、字体风格*/
+    text-decoration: none;  /*去掉了下划线*/
+    text-shadow: 0 1px 0 #000;  /*字体阴影：右、下、颜色变淡、颜色*/
+}
+
+#menu a:hover {
+	color: #FFF;
+}
+
+#menu ul {      /*id="menu"的元素下面的所有ul标签属性*/
+    margin: 20px 0 0 0;
+    opacity: 0; /*透明度：完全透明*/
+    visibility: hidden;
+    position: absolute;
+    top: 38px;
+    /* left: 0; */
+    z-index: 1; /*元素的堆叠顺序*/
+    background: #444;
+    background: linear-gradient(#444, #111);    /*线性渐变*/
+    box-shadow: 0 -1px 0 rgba(255,255,255,.3);
+    border-radius: 3px;
+    transition: all .2s ease-in-out;    /*平滑过渡CSS属性：执行变换的属性、变换延续时间、变换速率变化、变换延迟时间*/
+}
+
+#menu li:hover > ul {   /*鼠标滑过id="menu"的元素下面的所有li元素下面的直接子节点ul效果*/
+    opacity: 1;
+    visibility: visible;    /*显示下拉列表*/
+    margin: 0;
+}
+
+ /*id="menu"的元素下面的所有ul标签下面的所有ul标签的属性*/	/*定义三级标签*/
+#menu ul ul {      
+    top: 0;
+    left: 150px;
+    margin: 0 0 0 20px;
+    box-shadow: -1px 0 0 rgba(255,255,255,.3);
+}
+
+/*id="menu"的元素下面的所有ul标签下面的所有a标签的属性*/	/*定义二级三级a标签属性*/
+#menu ul a {        
+    padding: 10px;
+    width: 130px;   /*下拉a元素的宽度*/
+    display: block;
+    white-space: nowrap;    /*规定段落中的文本不进行换行*/
+    float: none;
+    text-transform: none;   /*去掉大写*/
+}
+
+/*----------------登录和注册--------------*/
