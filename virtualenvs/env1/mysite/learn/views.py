@@ -35,7 +35,7 @@ def home(request):
 def show(request):
     
     #使用paginator实现分页
-    limit = 10  #限制每页显示的记录数
+    limit = 7  #限制每页显示的记录数
     items = smzdm_fx.objects(itemid__gt=705000).limit(30)
     paginator = Paginator(items, limit) #实例化一个分页对象
     page = request.GET.get('page')  #获取页码
@@ -46,10 +46,10 @@ def show(request):
     except EmptyPage:   #如果页码太大， 没有相应记录
         items = paginator.page(paginator.num_pages) #取最后一页的记录
         
-    after_range_num = 5     #页码范围
-    before_range_num = 6   
+    after_range_num = 6     #页码范围
+    before_range_num = 4   
     if page >= after_range_num:
-        page_range = paginator.page_range[page-after_range_num:page+before_range_num]
+        page_range = paginator.page_range[int(page)-after_range_num:int(page)+before_range_num]
     else:
         page_range = paginator.page_range[0:int(page)+before_range_num]  
 #     num = items.count()

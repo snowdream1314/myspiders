@@ -5,60 +5,157 @@
 <body>
 
 {% include "header_item.html" %}
-<p class='item_count'>一共有 {{num}} 条记录</p>
-
-<!--结果列表-->
-<div class="content_left">
-{% for item in items.object_list %}
-    <div class="container">
-        <h3 class="title"><a href="{{ item.href}}" target="_blank">{{ item.name }}</a></p>
-        <a href="{{ item.href}}" target="_blank"><img src="{{ item.image}}"></img></a>
+<div id="container" class="container_l">
+    <div class="nums">
+        <div class="search-tools"><i class="serach-tools-spans">筛选</i></div>
+        为您找到相关结果约 {{num}} 个
     </div>
-{% endfor %}
-</div>
-<!-- 使用django的paginator实现分页显示方式 -->
-<div id="page">
-{% if page_objects.has_previous %}
-<a href="?page={{ page_objects.previous_page_number }}" class="n"><上一页</a>
-{% endif %}
-{% for page_number in page_range %}
-{% ifequal page_number  items.number %}
-    <a href="?page={{ page_number }}" class="active" title="pre"><span class="fk"><i class="icon-bear-pn"></i></span><span class="pc">{{ page_number }}</span></a>
-{% else %}
-    <a href="?page={{ page_number }}" title="第{{ page_number }}页"><span class="pc">{{ page_number }}</span></a>
-{% endifequal %}
-{% endfor %}
-{% if page_objects.has_next %}
-    <a href="?page={{ page_objects.next_page_number }}" class="n" title="Next">下一页</a>
-{% endif %}  
-<b>{%if page_objects.paginator.num_pages%}共 {{ page_objects.paginator.num_pages }} 页{%endif%}</b>
-</div>
 
-<!-- 另一种分页显示方式 -->
-<!-- <p>
-{% if topics.has_previous %}
-  <a href="http://127.0.0.1:8000/show/?page={{ items.previous_page_number }}">Previous</a>
-  {% endif %}
-  {# items.paginator.number_pages 返回总页数 #}
-  Page {{ items.number }} of {{ items.paginator.num_pages }}.
-{% if items.has_next %}
-  <a href="http://127.0.0.1:8000/show/?page={{ items.next_page_number }}">Next</a>
-{% endif %}
-</p> -->
+    <!--结果列表-->
+    <div class="content_left">
+        {% for item in items.object_list %}
+        <li class="itemList">
+            <div class="itemTitle">
+                <!-- <a class="located" href="">国内</a> -->
+                <h3 class="itemName"><a href="{{ item.href}}" target="_blank">{{ item.name }}</a></h3>
+            </div>
+            <a title="{{ item.name }}" class="image-pic-left" target="_blank" href="{{ item.href }}"><img src="{{ item.image}}" class="img"></img></a>
+            <div class="itemRight">
+                <span class="price">{{ item.price }}</span>
+                <div class="lable">
+                    <span class="itemTab"><a href="">分类</a></span>
+                    <span class="itemTime">{{ item.updatetime }}</span>
+                </div>
+                <div class="itemDetail"><p>{{ item.item_description }}</p>
+                    <a href="{{ item.article_url }}" target="_blank" class="buyLink">详情</a>
+                </div>
+                <div class="itemBuy">
+                    <a id="worthy" href="" onclick="" class="good">
+                        <span class="score"><b>值{{ item.good_count }}</b></span>
+                    </a>
+                    <a id="unworthy" href="" onclick="" class="bad">
+                        <span class="score"><b>不值{{ item.bad_count }}</b></span>
+                    </a>
+                    <a id="collect" href="" onclick="" class="fav" title="收藏">
+                        <span class="score"><b>收藏{{ item.fav_count }}</b></span>
+                    </a>
+                    <div class="buyPart">                    
+                        <a href="" target="_blank" class="store">{{ item.originmall }}</a>
+                         <a href="{{ item.href }}" target="_blank" class="buyLink">购买链接</a>
+                    </div>   
+                </div>  
+            </div>
+        </li>
+            
+        {% endfor %}
+    </div>
+    <div class="content_right">
+        <div class="rr_title">相关搜索2</div>
+        <table>
+            <tbody>
+                <tr>
+                    <th><a href="">相关搜索1</a></th>
+                    <td></td>
+                    <th><a href="">相关搜索1</a></th>
+                    <td></td>
+                    <th><a href="">相关搜索1</a></th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th><a href="">相关搜索2</a></th>
+                    <td></td>
+                    <th><a href="">相关搜索2</a></th>
+                    <td></td>
+                    <th><a href="">相关搜索2</a></th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th><a href="">相关搜索3</a></th>
+                    <td></td>
+                    <th><a href="">相关搜索3</a></th>
+                    <td></td>
+                    <th><a href="">相关搜索3</a></th>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- 相关搜索 -->
+    <div id="relate_result">
+        <div class="rr_title">相关搜索1</div>
+        <table >
+            <tbody>
+                <tr>
+                    <th><a href="">相关搜索1</a></th>
+                    <td></td>
+                    <th><a href="">相关搜索1</a></th>
+                    <td></td>
+                    <th><a href="">相关搜索1</a></th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th><a href="">相关搜索2</a></th>
+                    <td></td>
+                    <th><a href="">相关搜索2</a></th>
+                    <td></td>
+                    <th><a href="">相关搜索2</a></th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th><a href="">相关搜索3</a></th>
+                    <td></td>
+                    <th><a href="">相关搜索3</a></th>
+                    <td></td>
+                    <th><a href="">相关搜索3</a></th>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-<!--分页-->
-<!-- <div id="page">
-    <a href="" class="n"><上一页</a>
-    <a href=""><span class="fk"><i class="icon-bear-pn"></i></span><span class="pc">1</span></a>
-    <a href=""><span class="fk"><i class="icon-bear-pn"></i></span><span class="pc">2</span></a>
-    <a href=""><span class="fk"><i class="icon-bear-pn"></i></span><span class="pc">3</span></a>
-    <a href=""><span class="fk"><i class="icon-bear-pn"></i></span><span class="pc">4</span></a>
-    <a href=""><span class="fk"><i class="icon-bear-pn"></i></span><span class="pc">5</span></a>
-    <a href=""><span class="fk"><i class="icon-bear-pn"></i></span><span class="pc">6</span></a>
-    <a href=""><span class="fk"><i class="icon-bear-pn"></i></span><span class="pc">7</span></a>
-    <a href=""><span class="fk"><i class="icon-bear-pn"></i></span><span class="pc">8</span></a>    
-    <a href="" class="n">下一页></a>
-</div> -->
+    <!-- 使用django的paginator实现分页显示方式 -->
+    <div id="page">
+    {% if items.has_previous %}
+        <a href="?page={{ items.previous_page_number }}" class="n"><上一页</a>
+    {% endif %}
+    {% for page_number in page_range %}
+    {% ifequal page_number  items.number %}
+        <a href="?page={{ page_number }}" class="active" title="pre"><span class="fk"><i class="icon-bear-pn"></i></span><span class="active">{{ page_number }}</span></a>
+    {% else %}
+        <a href="?page={{ page_number }}" title="第{{ page_number }}页"><span class="pc">{{ page_number }}</span></a>
+    {% endifequal %}
+    {% endfor %}
+    {% if items.has_next %}
+        <a href="?page={{ items.next_page_number }}" class="n" title="Next">下一页></a>
+    {% endif %}  
+        <b>{%if items.paginator.num_pages%}共 {{ items.paginator.num_pages }} 页{%endif%}</b>
+    </div>
+</div>
+    <!-- 另一种分页显示方式 -->
+    <!-- <p>
+    {% if topics.has_previous %}
+      <a href="http://127.0.0.1:8000/show/?page={{ items.previous_page_number }}">Previous</a>
+      {% endif %}
+      {# items.paginator.number_pages 返回总页数 #}
+      Page {{ items.number }} of {{ items.paginator.num_pages }}.
+    {% if items.has_next %}
+      <a href="http://127.0.0.1:8000/show/?page={{ items.next_page_number }}">Next</a>
+    {% endif %}
+    </p> -->
+
+    <!--分页-->
+    <!-- <div id="page">
+        <a href="" class="n"><上一页</a>
+        <a href=""><span class="fk"><i class="icon-bear-pn"></i></span><span class="pc">1</span></a>
+        <a href=""><span class="fk"><i class="icon-bear-pn"></i></span><span class="pc">2</span></a>
+        <a href=""><span class="fk"><i class="icon-bear-pn"></i></span><span class="pc">3</span></a>
+        <a href=""><span class="fk"><i class="icon-bear-pn"></i></span><span class="pc">4</span></a>
+        <a href=""><span class="fk"><i class="icon-bear-pn"></i></span><span class="pc">5</span></a>
+        <a href=""><span class="fk"><i class="icon-bear-pn"></i></span><span class="pc">6</span></a>
+        <a href=""><span class="fk"><i class="icon-bear-pn"></i></span><span class="pc">7</span></a>
+        <a href=""><span class="fk"><i class="icon-bear-pn"></i></span><span class="pc">8</span></a>    
+        <a href="" class="n">下一页></a>
+    </div> -->
 
 <!--回到顶部-->
 <div id="top" data-toggle="tooltip" data-placement="left" title="回到顶部">

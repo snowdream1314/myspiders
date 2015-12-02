@@ -26,8 +26,7 @@
     float: left;
     padding: 12px 30px; /*上和右内边距*/
     color: #999;
-    text-transform: uppercase;  /*字符大写*/
-    font: bold 12px Arial, Helvetica;   /*字体样式：粗细、大小、字体风格*/
+    text-transform: uppercase;  /*字符大写*/                        
     text-decoration: none;  /*去掉了下划线*/
     text-shadow: 0 1px 0 #000;  /*字体阴影：右、下、颜色变淡、颜色*/
 }

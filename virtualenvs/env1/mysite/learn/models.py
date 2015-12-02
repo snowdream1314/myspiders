@@ -1,6 +1,5 @@
 # from django.db import models
 
-from second_spider.items.item import Item
 from mongoengine import *
 from mysite.settings import DBNAME
 
@@ -41,7 +40,5 @@ class smzdm_fx(Document):
     good_count = IntField()
     fav_count = IntField()
     
-    def createItemdic(self, dict2):
-        return Item.createItemdic(self, dict2)
 
 
