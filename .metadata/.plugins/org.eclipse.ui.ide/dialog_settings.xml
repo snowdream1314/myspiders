@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="CleanDialogSettings">
+		<item value="500" key="DIALOG_WIDTH"/>
+		<item value="true" key="BUILD_ALL"/>
+		<item value="true" key="TOGGLE_SELECTED"/>
+		<item value="457" key="DIALOG_HEIGHT"/>
+		<item value="710" key="DIALOG_X_ORIGIN"/>
+		<item value="216" key="DIALOG_Y_ORIGIN"/>
+		<item value="true" key="BUILD_NOW"/>
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\CB-Ye\my_workspace\learn_scrapy\learn1\spider1"/>
+			<item value="C:\Users\CB-Ye\my_workspace\virtualenvs\env1\mysite"/>
+			<item value="C:\Users\CB-Ye\my_workspace\distribute_crawlers\distribute_crawler"/>
+			<item value="C:\Users\CB-Ye\my_workspace\distribute_crawlers\crawlerSlave01"/>
+			<item value="C:\Users\CB-Ye\my_workspace\AndroidTests\NetWorkTest"/>
+			<item value="C:\Users\CB-Ye\my_workspace\android\FirstActivity"/>
+			<item value="C:\Users\CB-Ye\my_workspace\myspiders\second_spider"/>
+			<item value="C:\Users\CB-Ye\workspace\spider_review_share"/>
+			<item value="C:\Users\CB-Ye\workspace\spider_review"/>
+			<item value="C:\Users\CB-Ye\workspace\spider_deals"/>
+			<item value="C:\Users\CB-Ye\my_workspace\virtualenvs\env1\weather"/>
+			<item value="C:\Users\CB-Ye\workspace\spider_review_local"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="NewWizardAction">
+		<item value="org.python.pydev.ui.wizards.project.PythonProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="com.android.ide.eclipse.wizards.category"/>
+			<item value="org.python.pydev.PythonCategory"/>
+		</list>
+	</section>
+</section>

@@ -1,0 +1,15 @@
+MODULES_MANAGER_V2
+conf.__init__|C:\Users\CB-Ye\my_workspace\distribute_crawlers\crawlerSlave01\conf\__init__.py
+conf.config|C:\Users\CB-Ye\my_workspace\distribute_crawlers\crawlerSlave01\conf\config.py
+crawlerSlave01.__init__|C:\Users\CB-Ye\my_workspace\distribute_crawlers\crawlerSlave01\crawlerSlave01\__init__.py
+crawlerSlave01.items|C:\Users\CB-Ye\my_workspace\distribute_crawlers\crawlerSlave01\crawlerSlave01\items.py
+crawlerSlave01.pipelines|C:\Users\CB-Ye\my_workspace\distribute_crawlers\crawlerSlave01\crawlerSlave01\pipelines.py
+crawlerSlave01.settings|C:\Users\CB-Ye\my_workspace\distribute_crawlers\crawlerSlave01\crawlerSlave01\settings.py
+crawlerSlave01.spiders.__init__|C:\Users\CB-Ye\my_workspace\distribute_crawlers\crawlerSlave01\crawlerSlave01\spiders\__init__.py
+crawlerSlave01.spiders.slaver01|C:\Users\CB-Ye\my_workspace\distribute_crawlers\crawlerSlave01\crawlerSlave01\spiders\slaver01.py
+crawlerSlave01.spiders.slaver02|C:\Users\CB-Ye\my_workspace\distribute_crawlers\crawlerSlave01\crawlerSlave01\spiders\slaver02.py
+items.__init__|C:\Users\CB-Ye\my_workspace\distribute_crawlers\crawlerSlave01\items\__init__.py
+items.item|C:\Users\CB-Ye\my_workspace\distribute_crawlers\crawlerSlave01\items\item.py
+utils.__init__|C:\Users\CB-Ye\my_workspace\distribute_crawlers\crawlerSlave01\utils\__init__.py
+utils.net_util|C:\Users\CB-Ye\my_workspace\distribute_crawlers\crawlerSlave01\utils\net_util.py
+utils.send_to_queue|C:\Users\CB-Ye\my_workspace\distribute_crawlers\crawlerSlave01\utils\send_to_queue.py

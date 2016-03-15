@@ -1,12 +1,13 @@
 # -*- coding: UTF-8 -*- 
 #-------------------------------------
 # Name: 
-# Purpose: windows CMD终端打印彩色字体（调用windows API）
+# Purpose: windows CMD终端打印彩色字体（调用windows API�?
 # Author:
 # Date: 2015-11-10
 #-------------------------------------
 
 import ctypes
+
 
 STD_INPUT_HANDLE = -10
 STD_OUTPUT_HANDLE= -11
@@ -32,7 +33,7 @@ class Color:
         bool = ctypes.windll.kernel32.SetConsoleTextAttribute(handle, color)
         return bool
     
-    #初始化颜色为黑色背景，纯白色字，CMD默认为灰色字体
+    #初始化颜色为黑色背景，纯白色字，CMD默认为灰色字�?
     def reset_color(self):
         self.set_cmd_color(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY)
         

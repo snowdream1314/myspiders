@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+encoding//spider_video/conf/config.py=utf-8
+encoding//spider_video/items.py=utf-8
+encoding//spider_video/settings.py=utf-8
+encoding//spider_video/spiders/youku.py=utf-8
+encoding//spider_video/utils/load_content.py=utf-8

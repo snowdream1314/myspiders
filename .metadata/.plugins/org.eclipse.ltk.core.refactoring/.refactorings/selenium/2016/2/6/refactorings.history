@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;selenium/socket-server.py&apos; to &apos;socket_server.py&apos;" description="Rename resource &apos;socket-server.py&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="socket-server.py" name="socket_server.py" stamp="1454550298791" updateReferences="true"/>
+</session>

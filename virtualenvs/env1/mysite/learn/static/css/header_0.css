@@ -28,6 +28,7 @@
     color: #999;
     text-transform: uppercase;  /*字符大写*/                        
     text-decoration: none;  /*去掉了下划线*/
+    font: bold 10px Arial, Helvetica;   /*字体样式：粗细、大小、字体风格*/
     text-shadow: 0 1px 0 #000;  /*字体阴影：右、下、颜色变淡、颜色*/
 }
 

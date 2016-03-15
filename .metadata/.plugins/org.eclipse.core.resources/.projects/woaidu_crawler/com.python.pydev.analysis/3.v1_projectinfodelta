@@ -1,0 +1,14 @@
+INSTUPscrapy_redis.dupefilter
+C:\Users\CB-Ye\my_workspace\distribute_crawler-master\woaidu_crawler\woaidu_crawler\scrapy_redis\dupefilter.py
+INFOS:&&1|1|2|0&&2|3|2|1&&3|4|2|5&&3|6|2|5&&2|7|2|1&&2|8|2|1&&2|9|2|1&&2|10|2|1&&2|11|2|1
+server=4
+scrapy_redis.dupefilter=2
+from_crawler=8
+request_seen=9
+RFPDupeFilter=1
+clear=11
+__init__=3
+close=10
+key=6
+from_settings=7
+RFPDupeFilter.__init__=5

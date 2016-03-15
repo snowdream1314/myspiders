@@ -1,0 +1,22 @@
+# -*- coding: utf-8 -*-
+from bs4 import BeautifulSoup
+from scrapy.spiders import Spider
+
+from items import FirstSpiderItem
+
+
+class smzdm_spider(Spider) :
+    name = "smzdm"
+    allowed_domains = "smzdm.com"
+    start_urls = ['http://faxian.smzdm.com/'] 
+    
+    def parse(self, response) :
+        print "parse"
+        
+        selector = BeautifulSoup(response.body)
+        lists = selector.findAll("li", {"class":"list"})
+        
+        for a in lists :
+            item = FirstSpiderItem()
+            item['id'] = list.attrs['articleid']
+            print "item"

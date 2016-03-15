@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+encoding//spider_wxgzh/spider_wxgzh/conf/config.py=utf-8
+encoding//spider_wxgzh/spider_wxgzh/conf/load_sogou_content.py=utf-8
+encoding//spider_wxgzh/spider_wxgzh/pipelines.py=utf-8
+encoding//spider_wxgzh/spider_wxgzh/proxy/GrabProxy.py=utf-8
+encoding//spider_wxgzh/spider_wxgzh/settings.py=utf-8
+encoding//spider_wxgzh/spider_wxgzh/spider.py=UTF-8
+encoding//spider_wxgzh/spider_wxgzh/spiders/cookies/gzh_prepare_cookie.py=utf-8
+encoding//spider_wxgzh/spider_wxgzh/spiders/gzh_crawl_article.py=utf-8
+encoding//spider_wxgzh/spider_wxgzh/spiders/gzh_crawl_article_cycle.py=utf-8
+encoding//spider_wxgzh/spider_wxgzh/spiders/gzh_crawl_ext.py=utf-8
+encoding//spider_wxgzh/spider_wxgzh/spiders/gzh_crawl_index.py=utf-8
+encoding//spider_wxgzh/spider_wxgzh/utils/ghost.py=utf-8

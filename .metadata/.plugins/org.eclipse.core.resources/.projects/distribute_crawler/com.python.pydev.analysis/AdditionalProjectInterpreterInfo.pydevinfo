@@ -1,0 +1,58 @@
+-- VERSION_4
+-- START DISKCACHE
+C:\Users\CB-Ye\my_workspace\myspiders\.metadata\.plugins\org.eclipse.core.resources\.projects\distribute_crawler\com.python.pydev.analysis\v2_indexcache
+distribute_crawler.spiders.smzdm_fx_urls|1455680282092|C:\Users\CB-Ye\my_workspace\distribute_crawlers\distribute_crawler\distribute_crawler\spiders\smzdm_fx_urls.py
+utils.__init__|1453430004828|C:\Users\CB-Ye\my_workspace\distribute_crawlers\distribute_crawler\utils\__init__.py
+conf.__init__|1453429470399|C:\Users\CB-Ye\my_workspace\distribute_crawlers\distribute_crawler\conf\__init__.py
+conf.config|1453431768955|C:\Users\CB-Ye\my_workspace\distribute_crawlers\distribute_crawler\conf\config.py
+distribute_crawler.items|1453369110738|C:\Users\CB-Ye\my_workspace\distribute_crawlers\distribute_crawler\distribute_crawler\items.py
+distribute_crawler.settings|1453428531827|C:\Users\CB-Ye\my_workspace\distribute_crawlers\distribute_crawler\distribute_crawler\settings.py
+utils.receiveItemsFromQueue|1457408658435|C:\Users\CB-Ye\my_workspace\distribute_crawlers\distribute_crawler\utils\receiveItemsFromQueue.py
+distribute_crawler.pipelines|1453369110738|C:\Users\CB-Ye\my_workspace\distribute_crawlers\distribute_crawler\distribute_crawler\pipelines.py
+distribute_crawler.spiders.__init__|1441676494676|C:\Users\CB-Ye\my_workspace\distribute_crawlers\distribute_crawler\distribute_crawler\spiders\__init__.py
+distribute_crawler.__init__|1441676494665|C:\Users\CB-Ye\my_workspace\distribute_crawlers\distribute_crawler\distribute_crawler\__init__.py
+plugin.__init__|1453446272121|C:\Users\CB-Ye\my_workspace\distribute_crawlers\distribute_crawler\plugin\__init__.py
+utils.net_util|1453456136800|C:\Users\CB-Ye\my_workspace\distribute_crawlers\distribute_crawler\utils\net_util.py
+plugin.receiveItemsFromQueue|1457424637742|C:\Users\CB-Ye\my_workspace\distribute_crawlers\distribute_crawler\plugin\receiveItemsFromQueue.py
+-- END DISKCACHE
+-- START DICTIONARY
+10
+7=utils.receiveItemsFromQueue
+8=distribute_crawler.spiders.smzdm_fx_urls
+9=smzdmFx_urls_Spider
+4=distribute_crawler.pipelines
+10=DistributeCrawlerPipeline
+6=utils.net_util
+5=conf.config
+2=plugin.receiveItemsFromQueue
+3=distribute_crawler.items
+1=distribute_crawler.settings
+-- END DICTIONARY
+-- START TREE 1
+16
+bot|1|BOT_NAME!11@
+cal|1|callback!18@
+cha|1|channel!19@
+con|1|connection!19@
+dis|2|DistributeCrawlerItem!25@DistributeCrawlerPipeline!33@
+fir|6|first_mongodb_domain!19@first_mongodb!19@first_mongodb_port!19@first_mongodb_port!43@first_mongodb!43@first_mongodb_domain!43@
+ite|1|ITEM_PIPELINES!11@
+loa|3|loadHtmlNoproxy!50@loadHtmlSelector!50@loadHtmlProxy!50@
+new|1|NEWSPIDER_MODULE!11@
+que|1|queue!19@
+rec|1|receiveItemsFromQueue!58@
+red|4|REDIS_PORT!11@redisdb!43@redisdb!19@REDIS_HOST!11@
+res|2|resetRedis!58@resetRedis!18@
+sch|4|SCHEDULER_QUEUE_CLASS!11@SCHEDULER!11@SCHEDULER_IDLE_BEFORE_CLOSE!11@SCHEDULER_PERSIST!11@
+smz|1|smzdmFx_urls_Spider!65@
+spi|1|SPIDER_MODULES!11@
+-- END TREE
+-- START TREE 2
+6
+all|1|allowed_domains!9&67@
+nam|1|name!9&67@
+par|2|parse!9&66@parseUrls!9&66@
+pro|1|process_item!10&34@
+red|1|redis_key!9&67@
+sta|1|start_urls!9&67@
+-- END TREE

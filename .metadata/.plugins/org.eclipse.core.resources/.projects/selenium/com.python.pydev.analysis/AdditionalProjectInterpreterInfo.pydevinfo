@@ -1,0 +1,25 @@
+-- VERSION_4
+-- START DISKCACHE
+C:\Users\CB-Ye\my_workspace\myspiders\.metadata\.plugins\org.eclipse.core.resources\.projects\selenium\com.python.pydev.analysis\v2_indexcache
+socket_client|1454551562993|C:\Users\CB-Ye\my_workspace\selenium\socket_client.py
+selenium_python|1453952290826|C:\Users\CB-Ye\my_workspace\selenium\selenium_python.py
+socket_server|1454551307746|C:\Users\CB-Ye\my_workspace\selenium\socket_server.py
+-- END DISKCACHE
+-- START DICTIONARY
+3
+3=socket_client
+1=selenium_python
+2=socket_server
+-- END DICTIONARY
+-- START TREE 1
+6
+dri|1|driver!11@
+hos|2|HOST!19@HOST!27@
+por|2|port!19@PORT!27@
+rep|2|reply!27@replay!19@
+req|2|request!27@request!19@
+s|2|s!19@s!27@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

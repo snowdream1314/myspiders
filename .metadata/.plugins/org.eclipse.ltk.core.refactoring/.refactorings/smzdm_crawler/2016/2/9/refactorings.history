@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;smzdm_crawler/smzdm_crawler/spiders/smzdmfx_spider&apos; to &apos;smzdmfx_spider.py&apos;" description="Rename resource &apos;smzdmfx_spider&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="smzdm_crawler/spiders/smzdmfx_spider" name="smzdmfx_spider.py" stamp="1456108540858" updateReferences="true"/>
+</session>

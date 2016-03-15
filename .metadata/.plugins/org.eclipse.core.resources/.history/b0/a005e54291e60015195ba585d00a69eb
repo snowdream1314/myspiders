@@ -1,0 +1,31 @@
+# -*- coding: utf-8 -*-
+import time
+
+import redis
+from scrapy.dupefilters import BaseDupeFilter
+
+
+class RFPDupeFilter(BaseDupeFilter):
+    '''
+    docs
+    '''
+    
+    def __init__(self, server, key):
+        '''
+        docs
+        '''
+        
+        self.server = server
+        self.key = key
+        
+    @classmethod
+    def from_settings(cls, settings):
+        host = settings.get('REDIS_HOST', 'localhost')
+        port = settings.get('REDSIS_PORT', 6379)
+        server = redis.Redis(host, port)
+        
+        key = "dupefilter:%s" % int(time.time())
+        
+        return cls(server, key)
+        
+    def from_crawler(self):

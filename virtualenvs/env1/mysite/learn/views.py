@@ -35,7 +35,7 @@ def home(request):
 def show(request):
     
     #使用paginator实现分页
-    limit = 7  #限制每页显示的记录数
+    limit = 10  #限制每页显示的记录数
     items = smzdm_fx.objects(itemid__gt=705000).limit(30)
     paginator = Paginator(items, limit) #实例化一个分页对象
     page = request.GET.get('page')  #获取页码

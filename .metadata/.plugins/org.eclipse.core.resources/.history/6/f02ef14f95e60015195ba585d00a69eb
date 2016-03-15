@@ -1,0 +1,9 @@
+# -*- coding: utf-8 -*-
+
+class Base(object):
+    """per-spider queue/stack base class"""
+    
+    
+    def __init__(self, server, spider, key):
+        """ initialize """
+    

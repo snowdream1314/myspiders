@@ -52,7 +52,7 @@ class smzdm_fx_Spider(Spider):
         item_collection_name = "smzdm_fx_category"
         mongodbCategoryList = first_mongodb[self.database][item_collection_name]
         
-        #清除数据库数据
+        #清除数据库数�?
 #         mongodbCategoryList.remove()
 #         print "remove over"
         
@@ -108,16 +108,16 @@ class smzdm_fx_Spider(Spider):
         item_collection_name = "smzdm_fx_item"
         mongodbItem = first_mongodb[self.database][item_collection_name]
         
-        #清除数据库数据
+        #清除数据库数�?
 #         mongodbItem.remove()
 #         print "remove over"
-        clr = Color()   #CMD终端分颜色打印
+        clr = Color()   #CMD终端分颜色打�?
         
         source_url = source['href']
         source_name = source['item_name']
-        if source['item_id'] < 15 : return
-        if source['item_id'] == 15 :
-            source_url = "http://faxian.smzdm.com/fenlei/qitafenlei/p192"
+#         if source['item_id'] < 15 : return
+#         if source['item_id'] == 15 :
+#             source_url = "http://faxian.smzdm.com/fenlei/qitafenlei/p192"
         clr.print_red_text(source_url)
         clr.print_red_text(source_name)    
 #         print source_name
@@ -143,12 +143,12 @@ class smzdm_fx_Spider(Spider):
 #                 clr.print_blue_text(item.itemid)
                 print item.itemid
                 
-                #更新，直接跳到下一个分类
+                #更新，直接跳到下�?个分�?
                 num = mongodbItem.find({"itemid":item.itemid}).count()
-#                 if num != 0 : return    
-                if num != 0 : 
+                if num != 0 : return    
+#                 if num != 0 : 
 #                     clr.print_yellow_text("item exits")
-                    continue  #暂停，继续爬取
+#                     continue  #暂停，继续爬�?
                 
                 #时间  
                 item.updatetime = int (list.attrs['timesort'])
@@ -178,7 +178,7 @@ class smzdm_fx_Spider(Spider):
                 item.price = list.find("h2", {"class":"itemName"}).find("span", {"class":"red"}).get_text()     
 #                 if item.price == '' : continue 
                 if "促销".decode('utf-8') in item.price : continue
-                if "红包".decode('utf-8') in item.price : continue    #过滤非商品条目
+                if "红包".decode('utf-8') in item.price : continue    #过滤非商品条�?
                 if  item.price != '' and not re.search(r'\d', item.price) : continue        #过滤价格中没有数字的条目
 #                 print item.price
                 
@@ -187,12 +187,12 @@ class smzdm_fx_Spider(Spider):
                 clr.print_blue_text(item.href)     
 #                 print item.href
                 
-                #推荐数  
-                goodcount = list.find("div", {"class":"zan_fav_com"}).find("a", {"class":"zan"}).find("em").get_text()      #“值”数
+                #推荐�?  
+                goodcount = list.find("div", {"class":"zan_fav_com"}).find("a", {"class":"zan"}).find("em").get_text()      #“�?��?�数
                 goodcountnum = int(goodcount)
                 print "goodcountnum is %d" %goodcountnum        
                 
-                #评论数  
+                #评论�?  
                 commentcount = list.find("div", {"class":"zan_fav_com"}).find("a", {"class":"comment"}).get_text()      
                 commentcountnum = int(commentcount)
                 print "commentcountnum is %d" %commentcountnum
@@ -262,20 +262,20 @@ class smzdm_fx_Spider(Spider):
                 badcountnum = int(badcount)
                 print "badcountnum is %d" %badcountnum
                 
-                #收藏数
+                #收藏�?
                 favcount = article_selector.find("div", {"class":"operate_box"}).find("div", {"class":"operate_icon"}).find("a", {"class":"fav"}).find("em").get_text()
                 favcountnum = int(favcount)
                 print favcountnum 
                   
                 item_dict = item.createItemdic({"originmall":originmall, "baoliao_content":baoliao_content, "youhui_content":youhui_content, "item_description":item_description, "bad_count":badcountnum, "fav_count":favcountnum, "article_url":article_url, "article_time":article_time, "good_count":goodcountnum, "comment_count":commentcountnum})
                 print item_dict 
-                clr.print_green_text(item_dict)
+#                 clr.print_green_text(item_dict)
                 
                 #判断是否已经爬取  
                 num = mongodbItem.find({"itemid":item.itemid}).count()
                 if num == 0 :
 #                     item_list.append(item_dict)
-                    mongodbItem.insert(item_dict)    #一次插入一个条目
+                    mongodbItem.insert(item_dict)    #�?次插入一个条�?
                     clr.print_red_text("insert successfully")
 #                     print "insert successfully"
                 else :
@@ -285,7 +285,7 @@ class smzdm_fx_Spider(Spider):
 #                     print ("item exits, num is %s"  % num)
                     continue
             
-            #一次插入一页所有条目      
+            #�?次插入一页所有条�?      
 #             print item_list
 #             if len(item_list) != 0 :
 #                 self.mongodbitemlist.insert(item_list) 
@@ -297,3 +297,4 @@ class smzdm_fx_Spider(Spider):
             else :
                 print "exit"
                 break
+        clr.print_red_text("all done")

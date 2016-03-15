@@ -51,7 +51,7 @@ class smzdm_yh_Spider(Spider):#OK
         item_collection_name = "smzdm_yh_category"
         mongodbCategoryList = first_mongodb[self.database][item_collection_name]
         
-        #清除数据库数据
+        #清除数据库数�?
 #         mongodbCategoryList.remove()
 #         print "remove over"
         
@@ -107,9 +107,9 @@ class smzdm_yh_Spider(Spider):#OK
         item_collection_name = "smzdm_yh_item"
         mongodbItem = first_mongodb[self.database][item_collection_name]
         
-        clr = Color()   #CMD终端分颜色打印
+        clr = Color()   #CMD终端分颜色打�?
         
-        #清除数据库数据
+        #清除数据库数�?
 #         mongodbItem.remove()
 #         print "remove over"
         source_url = source['href']
@@ -139,13 +139,13 @@ class smzdm_yh_Spider(Spider):#OK
                 item.itemid = int (div.attrs['articleid'].split("_")[-1])
                 print item.itemid
                 
-                #更新，直接跳到下一个分类
+                #更新，直接跳到下�?个分�?
                 item_num = mongodbItem.find({"itemid":item.itemid}).count()
                 if item_num != 0 : 
                     clr.print_red_text("%s update over " %source_name)
 #                     print "%s update over " %source_name
                     return
-#                 if item_num != 0 : continue     #暂停，继续爬取
+#                 if item_num != 0 : continue     #暂停，继续爬�?
                       
                 item.updatetime = int (div.attrs['timesort'])
                 updatetime = time.asctime(time.localtime(item.updatetime))
@@ -156,14 +156,14 @@ class smzdm_yh_Spider(Spider):#OK
                 item.name = div.find("h2", {"class":"itemName"}).find("a").get_text().strip()
 #                 print item.name
                     
-#                 if "优惠券".decode('utf-8') in item.name : continue 
+#                 if "优惠�?".decode('utf-8') in item.name : continue 
 #                 if "红包".decode('utf-8') in item.name : continue
-#                 if "免费得".decode('utf-8') in item.name : continue
-#                 if "蚊子肉".decode('utf-8') in item.name : continue
-#                 if "消费提示".decode('utf-8') in item.name : continue #过滤非商品条目
+#                 if "免费�?".decode('utf-8') in item.name : continue
+#                 if "蚊子�?".decode('utf-8') in item.name : continue
+#                 if "消费提示".decode('utf-8') in item.name : continue #过滤非商品条�?
 #                 if "促销".decode('utf-8') in item.name : continue 
 #                 if "活动".decode('utf-8') in item.name : continue
-#                 if "什么值得买".decode('utf-8') in item.name : continue 
+#                 if "�?么�?�得�?".decode('utf-8') in item.name : continue 
 #                 if "公告".decode('utf-8') in item.name : continue 
 #                 if "打车".decode('utf-8') in item.name : continue 
 #                 if "公交".decode('utf-8') in item.name : continue 
@@ -199,7 +199,7 @@ class smzdm_yh_Spider(Spider):#OK
                 item.href = div.find("div", {"class":"buy"})    
                 if item.href :
                     item.href =item.href.find("a", {"target":"_blank"}).attrs['href']
-                    if "baoxian" in item.href : continue    #过滤保险类条目
+                    if "baoxian" in item.href : continue    #过滤保险类条�?
                     if "baidu" in item.href : continue
                     print item.href
                 else :             
@@ -216,23 +216,23 @@ class smzdm_yh_Spider(Spider):#OK
                     originmall = ""
                     originmallurl = ""
                 
-                #推荐数      
+                #推荐�?      
                 itemelse = div.find("div", {"class":"lrBot"})
                 goodcount = itemelse.find("a", {"class":"good"}).find("span", {"class":"scoreTotal"}).attrs['value']
-                goodcountnum = int(goodcount)   #值
+                goodcountnum = int(goodcount)   #�?
                 print "goodcountnum is %d" %goodcountnum
                 
                 #不推荐数     
                 badcount = itemelse.find("a", {"class":"bad"}).find("span", {"class":"scoreTotal"}).attrs['value']
-                badcountnum = int(badcount)    #不值
+                badcountnum = int(badcount)    #不�??
                 print "badcountnum is %d" %badcountnum
                 
-                #收藏数     
+                #收藏�?     
                 favcount = itemelse.find("a", {"title":"收藏"}).find("em").get_text()
                 favcountnum = int(favcount)     #收藏
                 print "favcountnum is %d" %favcountnum
                 
-                #评论数     
+                #评论�?     
                 commentcount = itemelse.find("a", {"class":"comment"}).get_text()
                 commentcountnum = int(commentcount)     #评论
                 print "commentcountnum is %d" %commentcountnum
@@ -256,13 +256,13 @@ class smzdm_yh_Spider(Spider):#OK
                     print ("item exits, num is %s"  % item_num)
                     continue
             
-            #一次插入整页所有条目          
+            #�?次插入整页所有条�?          
 #             print item_list     
 #             if len(item_list) != 0 :  
-#                 mongodbItem.insert(item_list)  #一次插入一页所有条目
+#                 mongodbItem.insert(item_list)  #�?次插入一页所有条�?
 #                 print "insert successfully"
              
-            #下一页     
+            #下一�?     
             next_page = selector.find("ul", {"class":"pagination"}).find("li", {"class":"pagedown"})
             if next_page :
                 source_url = next_page.find("a").attrs['href']

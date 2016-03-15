@@ -1,0 +1,14 @@
+MODULES_MANAGER_V2
+conf.__init__|C:\Users\CB-Ye\my_workspace\distribute_crawlers\distribute_crawler\conf\__init__.py
+conf.config|C:\Users\CB-Ye\my_workspace\distribute_crawlers\distribute_crawler\conf\config.py
+distribute_crawler.__init__|C:\Users\CB-Ye\my_workspace\distribute_crawlers\distribute_crawler\distribute_crawler\__init__.py
+distribute_crawler.items|C:\Users\CB-Ye\my_workspace\distribute_crawlers\distribute_crawler\distribute_crawler\items.py
+distribute_crawler.pipelines|C:\Users\CB-Ye\my_workspace\distribute_crawlers\distribute_crawler\distribute_crawler\pipelines.py
+distribute_crawler.settings|C:\Users\CB-Ye\my_workspace\distribute_crawlers\distribute_crawler\distribute_crawler\settings.py
+distribute_crawler.spiders.__init__|C:\Users\CB-Ye\my_workspace\distribute_crawlers\distribute_crawler\distribute_crawler\spiders\__init__.py
+distribute_crawler.spiders.smzdm_fx_urls|C:\Users\CB-Ye\my_workspace\distribute_crawlers\distribute_crawler\distribute_crawler\spiders\smzdm_fx_urls.py
+plugin.__init__|C:\Users\CB-Ye\my_workspace\distribute_crawlers\distribute_crawler\plugin\__init__.py
+plugin.receiveItemsFromQueue|C:\Users\CB-Ye\my_workspace\distribute_crawlers\distribute_crawler\plugin\receiveItemsFromQueue.py
+utils.__init__|C:\Users\CB-Ye\my_workspace\distribute_crawlers\distribute_crawler\utils\__init__.py
+utils.net_util|C:\Users\CB-Ye\my_workspace\distribute_crawlers\distribute_crawler\utils\net_util.py
+utils.receiveItemsFromQueue|C:\Users\CB-Ye\my_workspace\distribute_crawlers\distribute_crawler\utils\receiveItemsFromQueue.py

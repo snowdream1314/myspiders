@@ -1,0 +1,13 @@
+MODULES_MANAGER_V2
+__init__|\\CAIBO\Share\learn_scrapy\smzdm_crawler\smzdm_crawler\__init__.py
+items|\\CAIBO\Share\learn_scrapy\smzdm_crawler\smzdm_crawler\items.py
+pipelines.__init__|\\CAIBO\Share\learn_scrapy\smzdm_crawler\smzdm_crawler\pipelines\__init__.py
+pipelines.db_pipeline|\\CAIBO\Share\learn_scrapy\smzdm_crawler\smzdm_crawler\pipelines\db_pipeline.py
+scrapy_redis.__init__|\\CAIBO\Share\learn_scrapy\smzdm_crawler\smzdm_crawler\scrapy_redis\__init__.py
+scrapy_redis.dulpefilter|\\CAIBO\Share\learn_scrapy\smzdm_crawler\smzdm_crawler\scrapy_redis\dulpefilter.py
+scrapy_redis.queue|\\CAIBO\Share\learn_scrapy\smzdm_crawler\smzdm_crawler\scrapy_redis\queue.py
+scrapy_redis.schduler|\\CAIBO\Share\learn_scrapy\smzdm_crawler\smzdm_crawler\scrapy_redis\schduler.py
+settings|\\CAIBO\Share\learn_scrapy\smzdm_crawler\smzdm_crawler\settings.py
+spiders.__init__|\\CAIBO\Share\learn_scrapy\smzdm_crawler\smzdm_crawler\spiders\__init__.py
+spiders.smzdmfx_spider|\\CAIBO\Share\learn_scrapy\smzdm_crawler\smzdm_crawler\spiders\smzdmfx_spider.py
+utils.__init__|\\CAIBO\Share\learn_scrapy\smzdm_crawler\smzdm_crawler\utils\__init__.py

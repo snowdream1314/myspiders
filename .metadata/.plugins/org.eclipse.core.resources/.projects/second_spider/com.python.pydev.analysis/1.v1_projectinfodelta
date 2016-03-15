@@ -1,0 +1,14 @@
+INSTUPsecond_spider.spiders.smzdm_fx
+C:\Users\CB-Ye\my_workspace\myspiders\second_spider\second_spider\spiders\smzdm_fx.py
+INFOS:&&1|1|2|0&&3|3|2|1&&3|4|2|1&&3|5|2|1&&3|6|2|1&&2|7|2|1&&2|8|2|1&&2|9|2|1&&2|10|2|1&&2|11|2|1
+database=5
+parseCategory=9
+second_spider.spiders.smzdm_fx=2
+name=3
+smzdm_fx_Spider=1
+parseItemList=10
+smzdm_fx=11
+item_collection_name=6
+parse=8
+__init__=7
+start_urls=4

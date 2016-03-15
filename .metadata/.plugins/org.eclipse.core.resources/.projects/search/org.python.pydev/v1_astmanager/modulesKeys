@@ -1,0 +1,12 @@
+MODULES_MANAGER_V2
+learn.__init__|C:\Users\CB-Ye\my_workspace\virtualenvs\env1\mysite\learn\__init__.py
+learn.admin|C:\Users\CB-Ye\my_workspace\virtualenvs\env1\mysite\learn\admin.py
+learn.migrations.__init__|C:\Users\CB-Ye\my_workspace\virtualenvs\env1\mysite\learn\migrations\__init__.py
+learn.models|C:\Users\CB-Ye\my_workspace\virtualenvs\env1\mysite\learn\models.py
+learn.tests|C:\Users\CB-Ye\my_workspace\virtualenvs\env1\mysite\learn\tests.py
+learn.views|C:\Users\CB-Ye\my_workspace\virtualenvs\env1\mysite\learn\views.py
+manage|C:\Users\CB-Ye\my_workspace\virtualenvs\env1\mysite\manage.py
+mysite.__init__|C:\Users\CB-Ye\my_workspace\virtualenvs\env1\mysite\mysite\__init__.py
+mysite.settings|C:\Users\CB-Ye\my_workspace\virtualenvs\env1\mysite\mysite\settings.py
+mysite.urls|C:\Users\CB-Ye\my_workspace\virtualenvs\env1\mysite\mysite\urls.py
+mysite.wsgi|C:\Users\CB-Ye\my_workspace\virtualenvs\env1\mysite\mysite\wsgi.py

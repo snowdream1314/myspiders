@@ -63,7 +63,7 @@ class dealmoon_Spider(Spider):
         item_collection_name = "dealmoon_category"
         mongodbCategoryList = first_mongodb[self.database][item_collection_name]
         
-        #清除数据库数据
+        #清除数据库数�?
 #         mongodbCategoryList.remove()
 #         print "remove over"
 
@@ -118,7 +118,7 @@ class dealmoon_Spider(Spider):
         sources = mongodbItemList.find()
         print "query ok"
         for source in sources :
-#             if source['id'] < 15 : continue  #暂停，继续爬取
+#             if source['id'] < 15 : continue  #暂停，继续爬�?
 #             print source
             print source['item_name']
             print source['href']
@@ -138,7 +138,7 @@ class dealmoon_Spider(Spider):
 #         mongodbItem.remove()
 #         print "remove over" 
 
-        clr = Color()   #CMD终端分颜色打印
+        clr = Color()   #CMD终端分颜色打�?
         
         source_url = source['href']
         source_name = source['item_name']
@@ -172,10 +172,10 @@ class dealmoon_Spider(Spider):
                 item.itemid = int (list.attrs['data-id'])
                 print item.itemid
                 
-                #更新，直接跳到下一个分类
+                #更新，直接跳到下�?个分�?
                 item_num = mongodbItem.find({"itemid":item.itemid}).count()
-#                 if item_num != 0 : return
-                if item_num != 0 : continue     #暂停，继续爬取
+                if item_num != 0 : return
+#                 if item_num != 0 : continue     #暂停，继续爬�?
                 
                 #条目标题
                 if list.find("h2") :
@@ -191,10 +191,10 @@ class dealmoon_Spider(Spider):
                 #时间
                 if not list.find("div", {"class":"date"}) : continue
                 updatetimeitem = list.find("div", {"class":"date"}).get_text().strip()
-                if "分钟".decode('utf-8') in updatetimeitem :     #时间格式为几分钟前
+                if "分钟".decode('utf-8') in updatetimeitem :     #时间格式为几分钟�?
                     updatetime =  datetime.datetime.now() - datetime.timedelta(minutes= int (filter(lambda x:x.isdigit(),updatetimeitem)))
                     item.updatetime = time.mktime(updatetime.timetuple())
-                elif "小时".decode('utf-8') in updatetimeitem :   #时间格式为几小时前
+                elif "小时".decode('utf-8') in updatetimeitem :   #时间格式为几小时�?
                     updatetime =  datetime.datetime.now() - datetime.timedelta(hours= int (filter(lambda x:x.isdigit(),updatetimeitem)))
                     item.updatetime = time.mktime(updatetime.timetuple())
                 else :   #时间格式为几天前
@@ -216,7 +216,7 @@ class dealmoon_Spider(Spider):
                     articleurl = list.find("h1").find("a").attrs['href']
                     
                 status = urllib.urlopen(articleurl).code
-                if status == 404 :  #有个别链接失效
+                if status == 404 :  #有个别链接失�?
                     clr.print_red_text("return 404 error")
 #                     print "return 404 error"
                     continue
@@ -245,10 +245,10 @@ class dealmoon_Spider(Spider):
 #                     item.href = "http://cn.dealmoon.com" + str (href.attrs['href'])
                 else :
                     item.href = ""
-                    continue        #过滤没有购买链接的条目
+                    continue        #过滤没有购买链接的条�?
                 print item.href
                 
-                #推荐数
+                #推荐�?
                 goodcount = list.find("div", {"class":"minfo"}).find("span", {"class":"like_btn"})
                 if goodcount :
                     goodcount = goodcount.find("em").get_text()
@@ -257,12 +257,12 @@ class dealmoon_Spider(Spider):
                     goodcountnum = 0
                 print "goodcountnum is %d" %goodcountnum        
                   
-                #评论数 
+                #评论�? 
                 commentcount = list.attrs['cmtcn']
                 commentcountnum = int (commentcount)
                 print "commentcountnum is %d" %commentcountnum 
                 
-                #收藏数
+                #收藏�?
                 favcount = list.find("div", {"class":"minfo"}).find("span", {"class":"fav_btn"}).find("em").attrs['num']
                 favcountnum = int (favcount)
                 print "favcountnum is %d" %favcountnum
@@ -274,7 +274,7 @@ class dealmoon_Spider(Spider):
                 num = mongodbItem.find({"itemid":item.itemid}).count()
                 if num == 0 :
 #                     item_list.append(dict)
-                    mongodbItem.insert(dict)    #一次插入一条
+                    mongodbItem.insert(dict)    #�?次插入一�?
                     clr.print_red_text("insert sucessfully")
 #                     print "insert sucessfully"
                 else :
@@ -282,13 +282,13 @@ class dealmoon_Spider(Spider):
 #                     print ("item exits, num is %s"  % num)
                     continue
              
-            #一次插入整页所有条目
+            #�?次插入整页所有条�?
 #             print item_list
 #             if len(item_list) != 0 :  
 #                 self.mongodbitemlist.insert(item_list)  
 #                 print "insert successfully"   
              
-            #下一页
+            #下一�?
             next_page = selector.find("div", {"class":"pages"}).find("a", {"class":"next_link"})
             if next_page :
                 source_url = next_page.attrs['href']

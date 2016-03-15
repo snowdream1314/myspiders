@@ -1,0 +1,11 @@
+INSTUPdistribute_crawler.spiders.smzdm_fx_urls
+C:\Users\CB-Ye\my_workspace\distribute_crawlers\distribute_crawler\distribute_crawler\spiders\smzdm_fx_urls.py
+INFOS:&&1|1|2|0&&3|3|2|1&&3|4|2|1&&3|5|2|1&&3|6|2|1&&2|7|2|1&&2|8|2|1
+smzdmFx_urls_Spider=1
+distribute_crawler.spiders.smzdm_fx_urls=2
+allowed_domains=4
+redis_key=6
+name=3
+parseUrls=8
+parse=7
+start_urls=5

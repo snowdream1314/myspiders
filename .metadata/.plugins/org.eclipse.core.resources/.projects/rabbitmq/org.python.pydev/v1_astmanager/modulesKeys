@@ -1,0 +1,4 @@
+MODULES_MANAGER_V2
+bloomfilter|C:\Users\CB-Ye\my_workspace\virtualenvs\env1\rabbitmq\bloomfilter.py
+reveiver|C:\Users\CB-Ye\my_workspace\virtualenvs\env1\rabbitmq\reveiver.py
+sender|C:\Users\CB-Ye\my_workspace\virtualenvs\env1\rabbitmq\sender.py

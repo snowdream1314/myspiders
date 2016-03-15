@@ -53,7 +53,7 @@ class mgpyh_Spider(Spider):#OK
         item_collection_name = "mgpyh_category"
         mongodbCategoryList = first_mongodb[self.database][item_collection_name]
         
-        #清除数据库数据
+        #清除数据库数�?
 #         mongodbCategoryList.remove()
 #         print "remove over"
         
@@ -108,7 +108,7 @@ class mgpyh_Spider(Spider):#OK
         item_collection_name = "mgpyh_item"
         mongodbItem = first_mongodb[self.database][item_collection_name]
         
-        #清除数据库数据
+        #清除数据库数�?
 #         mongodbItem.remove()
 #         print "remove over"
 
@@ -137,9 +137,9 @@ class mgpyh_Spider(Spider):#OK
                 item.itemid = int (list.find("a", {"class":"favorite"}).attrs['data-id'])
                 print item.itemid
                 
-#                 #更新，直接跳到下一个分类
-#                 num = self.mongodbitemlist.find({"itemid":item.itemid}).count()
-#                 if num != 0 : return
+#                 #更新，直接跳到下�?个分�?
+                num = mongodbItem.find({"itemid":item.itemid}).count()
+                if num != 0 : return
                 
                 #时间
                 item.updatetime = int (list.attrs['data-timestamp'])
@@ -165,7 +165,7 @@ class mgpyh_Spider(Spider):#OK
                         item.price += price.get_text()
                 else :
                     item.price = ''
-#                     continue    #过滤没有价格的条目
+#                     continue    #过滤没有价格的条�?
 #                 print item.price        
                 
                 #购买链接 
@@ -181,12 +181,12 @@ class mgpyh_Spider(Spider):#OK
                 article_href = "http://www.mgpyh.com" + str (list.find("h3").find("a").attrs['href'])
                 print article_href
                 
-                #收藏数
+                #收藏�?
                 favcount = itemicon.find("a", {"class":"favorite"}).find("span", {"class":"count"}).get_text()
                 favcountnum = int(favcount)
                 print "favcountnum is %d" %favcountnum      
                 
-                #评论数
+                #评论�?
                 commentcount = itemicon.find("li").find("a", {"class":None, "data-id":None}).find("span", {"class":"count"}).get_text()
                 commentcountnum = int(commentcount)
                 print "commentcountnum is %d" %commentcountnum      
@@ -199,14 +199,14 @@ class mgpyh_Spider(Spider):#OK
                 if num == 0 :
 #                     item_list.append(item_dict)
                  
-                    mongodbItem.insert(item_dict)       #一次插入一条
+                    mongodbItem.insert(item_dict)       #�?次插入一�?
                     print "insert sucessfully"
                 else :
                     print ("item exits, num is %s"  % num)
 #                     continue
-                    return      #退出,跳到下一个分类，有更新功能
+                    return      #�?�?,跳到下一个分类，有更新功�?
             
-            #一次插入整页所有条目
+            #�?次插入整页所有条�?
 #             print item_list
 #             if len(item_list) != 0 :
 #                 mongodbitemlist.insert(item_list) 

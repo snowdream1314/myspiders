@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+encoding//smzdm_crawler/items.py=utf-8
+encoding//smzdm_crawler/pipelines/db_pipeline.py=utf-8
+encoding//smzdm_crawler/settings.py=utf-8
+encoding//smzdm_crawler/spiders/smzdmfx_spider.py=utf-8

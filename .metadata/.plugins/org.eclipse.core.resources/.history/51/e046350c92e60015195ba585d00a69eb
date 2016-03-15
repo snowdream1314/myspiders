@@ -1,0 +1,48 @@
+# -*- coding: utf-8 -*-
+import time
+
+import redis
+from scrapy.dupefilters import BaseDupeFilter
+from scrapy.utils.request import request_fingerprint
+
+
+class RFPDupeFilter(BaseDupeFilter):
+    '''
+    docs
+    '''
+    
+    def __init__(self, server, key):
+        '''
+        docs
+        '''
+        
+        self.server = server
+        self.key = key
+    
+        
+    @classmethod
+    def from_settings(cls, settings):
+        host = settings.get('REDIS_HOST', 'localhost')
+        port = settings.get('REDSIS_PORT', 6379)
+        server = redis.Redis(host, port)
+        
+        key = "dupefilter:%s" % int(time.time())
+        
+        return cls(server, key)
+    
+    
+    @classmethod    
+    def from_crawler(cls, crawler):
+        return cls.from_settings(crawler.settings)
+    
+    
+    def request_seen(self, request):
+        '''
+        use sismenmber judge whether is dupefilter
+        '''
+        fp = request_fingerprint(request)
+        if self.server.sismember(self.key, fp):
+            return
+        self.server.sadd(self.key, fp)
+        
+

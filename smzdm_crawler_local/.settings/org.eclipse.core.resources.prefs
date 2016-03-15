@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+encoding//smzdm_crawler/pipelines/db_pipeline.py=utf-8
+encoding//smzdm_crawler/scrapy_redis/dulpefilter.py=utf-8
+encoding//smzdm_crawler/scrapy_redis/queue.py=utf-8
+encoding//smzdm_crawler/scrapy_redis/redis_scheduler.py=utf-8
+encoding//smzdm_crawler/settings.py=utf-8
+encoding//smzdm_crawler/spiders/smzdmfx_spider.py=utf-8

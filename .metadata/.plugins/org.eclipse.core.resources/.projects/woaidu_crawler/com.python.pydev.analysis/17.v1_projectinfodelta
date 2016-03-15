@@ -1,0 +1,11 @@
+INSTUPpipelines.drop_none_download
+C:\Users\CB-Ye\my_workspace\distribute_crawler-master\woaidu_crawler\woaidu_crawler\pipelines\drop_none_download.py
+INFOS:&&1|1|2|0&&3|3|2|1&&2|4|2|1&&3|5|2|6&&2|7|2|1&&2|8|2|1
+DropNoneBookFile.__init__=6
+from_crawler=7
+DropNoneBookFile=1
+pipelines.drop_none_download=2
+process_item=8
+Drop_NoneBookFile=3
+style=5
+__init__=4

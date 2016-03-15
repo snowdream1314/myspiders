@@ -1,0 +1,13 @@
+INSTUPspider_ebusiness.spiders.comment.shop_review_sites
+C:\Users\CB-Ye\workspace\spider_review\spider_ebusiness\spiders\comment\shop_review_sites.py
+INFOS:&&1|1|2|0&&3|3|2|1&&3|4|2|1&&3|5|2|1&&2|6|2|1&&2|7|2|1&&2|8|2|1&&2|9|2|1&&2|10|2|1
+aa=9
+bb=10
+allowed_domains=4
+__str__=7
+spider_ebusiness.spiders.comment.shop_review_sites=2
+name=3
+parse=8
+__init__=6
+start_urls=5
+shop_seller_comment_sites_spider=1

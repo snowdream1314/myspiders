@@ -1,0 +1,101 @@
+-- VERSION_4
+-- START DISKCACHE
+C:\Users\CB-Ye\my_workspace\myspiders\.metadata\.plugins\org.eclipse.core.resources\.projects\smzdm_crawler\com.python.pydev.analysis\v2_indexcache
+scrapy_redis.queue|1457602893518|\\CAIBO\Share\learn_scrapy\smzdm_crawler\smzdm_crawler\scrapy_redis\queue.py
+settings|1457594137513|\\CAIBO\Share\learn_scrapy\smzdm_crawler\smzdm_crawler\settings.py
+scrapy_redis.__init__|1457591004447|\\CAIBO\Share\learn_scrapy\smzdm_crawler\smzdm_crawler\scrapy_redis\__init__.py
+spiders.smzdmfx_spider|1457580846355|\\CAIBO\Share\learn_scrapy\smzdm_crawler\smzdm_crawler\spiders\smzdmfx_spider.py
+scrapy_redis.dulpefilter|1457595444136|\\CAIBO\Share\learn_scrapy\smzdm_crawler\smzdm_crawler\scrapy_redis\dulpefilter.py
+utils.__init__|1456124385851|\\CAIBO\Share\learn_scrapy\smzdm_crawler\smzdm_crawler\utils\__init__.py
+pipelines.__init__|1456124378512|\\CAIBO\Share\learn_scrapy\smzdm_crawler\smzdm_crawler\pipelines\__init__.py
+scrapy_redis.schduler|1457604302438|\\CAIBO\Share\learn_scrapy\smzdm_crawler\smzdm_crawler\scrapy_redis\schduler.py
+pipelines.db_pipeline|1457594209041|\\CAIBO\Share\learn_scrapy\smzdm_crawler\smzdm_crawler\pipelines\db_pipeline.py
+__init__|1437373200000|\\CAIBO\Share\learn_scrapy\smzdm_crawler\smzdm_crawler\__init__.py
+items|1456283916126|\\CAIBO\Share\learn_scrapy\smzdm_crawler\smzdm_crawler\items.py
+spiders.__init__|1437373200000|\\CAIBO\Share\learn_scrapy\smzdm_crawler\smzdm_crawler\spiders\__init__.py
+-- END DISKCACHE
+-- START DICTIONARY
+22
+2=settings
+13=SpiderPriorityQueue
+11=Scheduler
+3=scrapy_redis.schduler
+8=RFPDupeFilter
+9=SmzdmCrawlerPipeline
+19=Base.__init__
+21=SmzdmCrawlerPipeline.__init__
+10=Base
+17=Scheduler.__init__
+20=RFPDupeFilter.__init__
+22=SmzdmfxSpider
+1=scrapy_redis.queue
+7=spiders.smzdmfx_spider
+12=SpiderQueue
+18=Scheduler.open
+15=SmzdmCrawlerItem
+4=scrapy_redis.dulpefilter
+14=SpiderStack
+6=pipelines.db_pipeline
+5=items
+16=SmzdmCrawlerPipeline.open_spider
+-- END DICTIONARY
+-- START TREE 1
+16
+__a|1|__all__!11@
+bas|1|Base!9@
+bot|1|BOT_NAME!19@
+con|1|CONCURRENT_REQUESTS_PER_DOMAIN!19@
+dow|1|DOWNLOAD_DELAY!19@
+dup|1|DUPEFILTER_KEY!27@
+idl|1|IDLE_BEFORE_CLOSE!27@
+ite|1|ITEM_PIPELINES!19@
+mon|3|MONGODB_HOST!19@MONGODB_DB!19@MONGODB_PORT!19@
+new|1|NEWSPIDER_MODULE!19@
+que|2|QUEUE_KEY!27@QUEUE_CLASS!27@
+red|2|REDIS_HOST!19@REDIS_PORT!19@
+rfp|1|RFPDupeFilter!33@
+sch|2|Scheduler!25@SCHEDULER_PERSIST!27@
+smz|3|SmzdmCrawlerItem!41@SmzdmCrawlerPipeline!49@SmzdmfxSpider!57@
+spi|4|SPIDER_MODULES!19@SpiderQueue!9@SpiderPriorityQueue!9@SpiderStack!9@
+-- END TREE
+-- START TREE 2
+38
+__i|4|__init__!8&34@__init__!9&50@__init__!10&10@__init__!11&26@
+__l|5|__len__!11&26@__len__!10&10@__len__!12&10@__len__!13&10@__len__!14&10@
+_de|1|_decode_request!10&10@
+_en|1|_encode_request!10&10@
+buy|1|buy_link!15&43@
+cle|2|clear!8&34@clear!10&10@
+cli|1|client!16&51@
+clo|3|close!11&26@close_spider!9&50@close!8&34@
+com|1|comment_num!15&43@
+cra|1|crawl_time!15&43@
+db|1|db!16&51@
+dup|2|dupefilter_key!17&27@dupefilter!18&27@
+enq|1|enqueue_request!11&26@
+fav|1|fav_num!15&43@
+fro|5|from_crawler!9&50@from_crawler!11&26@from_settings!8&34@from_crawler!8&34@from_settings!11&26@
+has|1|has_pending_requests!11&26@
+id|1|id!15&43@
+idl|2|idle_before_close!17&27@idle_before_close!18&27@
+ima|1|image_link!15&43@
+key|2|key!19&11@key!20&35@
+mon|3|mongodb_db!21&51@mongodb_port!21&51@mongodb_domain!21&51@
+nam|2|name!22&59@name!15&43@
+nex|1|next_request!11&26@
+ope|2|open!11&26@open_spider!9&50@
+par|2|parse!22&58@parse_detail!22&58@
+per|1|persist!17&27@
+pop|4|pop!10&10@pop!12&10@pop!13&10@pop!14&10@
+pro|1|process_item!9&50@
+pub|1|publish_time!15&43@
+pus|4|push!10&10@push!12&10@push!13&10@push!14&10@
+que|3|queue!18&27@queue_cls!17&27@queue_key!17&27@
+red|3|redis_domian!21&51@redis_key!16&51@redis_port!21&51@
+req|1|request_seen!8&34@
+ser|4|server!20&35@server!19&11@server!17&27@server!16&51@
+spi|2|spider!18&27@spider!19&11@
+sta|2|status!17&27@start_urls!22&59@
+unw|1|unworthy_num!15&43@
+wor|1|worthy_num!15&43@
+-- END TREE

@@ -1,0 +1,10 @@
+INSTUPreveiver
+C:\Users\CB-Ye\my_workspace\virtualenvs\env1\rabbitmq\reveiver.py
+INFOS:&&3|1|2|0&&3|3|2|0&&3|4|2|0&&3|5|2|0&&3|6|2|0&&2|7|2|0
+result=4
+queue_name=5
+channel=3
+callback=7
+connection=1
+reveiver=2
+severities=6

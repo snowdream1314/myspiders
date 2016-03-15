@@ -1,0 +1,16 @@
+# -*- coding: utf-8 -*-
+from scrapy.dupefilters import BaseDupeFilter
+
+
+class RFPDupeFilter(BaseDupeFilter):
+    '''
+    docs
+    '''
+    
+    def __init__(self, server, key):
+        '''
+        docs
+        '''
+        
+        self.server = server
+        self.key = key

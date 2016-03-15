@@ -1,0 +1,14 @@
+MODULES_MANAGER_V2
+__init__|\\CAIBO\Share\spider_video\spider_video\__init__.py
+conf.__init__|\\CAIBO\Share\spider_video\spider_video\conf\__init__.py
+conf.config|\\CAIBO\Share\spider_video\spider_video\conf\config.py
+items|\\CAIBO\Share\spider_video\spider_video\items.py
+items.__init__|\\CAIBO\Share\spider_video\spider_video\items\__init__.py
+items.item|\\CAIBO\Share\spider_video\spider_video\items\item.py
+pipelines|\\CAIBO\Share\spider_video\spider_video\pipelines.py
+settings|\\CAIBO\Share\spider_video\spider_video\settings.py
+spiders.__init__|\\CAIBO\Share\spider_video\spider_video\spiders\__init__.py
+spiders.youku|\\CAIBO\Share\spider_video\spider_video\spiders\youku.py
+utils.__init__|\\CAIBO\Share\spider_video\spider_video\utils\__init__.py
+utils.load_content|\\CAIBO\Share\spider_video\spider_video\utils\load_content.py
+utils.python_mysql|\\CAIBO\Share\spider_video\spider_video\utils\python_mysql.py

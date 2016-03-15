@@ -1,0 +1,50 @@
+# -*- coding: utf-8 -*-
+import redis
+from scrapy.utils.misc import load_object
+
+#default values
+QUEUE_KEY = '%(spider)s:requests'
+QUEUE_CLASS = '.queue.SpiderPriorityQueue'
+DUPEFILTER_KEY = '%(spider)s:dupefilter'
+
+class Scheduler(object):
+    """Redis-based scheduler"""
+    
+    
+    def __init__(self, server, ):
+        self.server = server
+        pass
+    
+    @classmethod
+    def from_settings(cls, settings):
+        persist = settings.get('SCHEDULER_PERSIST', SCHEDULER_PERSIST)
+        host = settings.get('REDIS_HOST', 'localhost')
+        port = settings.get('REDIS_PORT', 6379)
+        server = redis.Redis(host, port)
+        
+        queue_key = settings.get('SCHEDULER_QUEUE_KEY', QUEUE_KEY)
+        queue_cls = load_object(settings.get('SCHEDULER_QUEUE_CLASS', QUEUE_CLASS))
+        
+        dupefilter_key = settings.get('DUPEFILTER_KEY', DUPEFILTER_KEY)
+        pass
+    
+    @classmethod
+    def from_crawler(cls, crawler):
+        pass
+    
+    
+    def open(self):
+        pass
+    
+    
+    def close(self):
+        pass
+    
+    
+    def enqueue_request(self, request):
+        pass
+    
+    
+    def next_request(self):
+      
+    

@@ -1,0 +1,67 @@
+-- VERSION_4
+-- START DISKCACHE
+C:\Users\CB-Ye\my_workspace\myspiders\.metadata\.plugins\org.eclipse.core.resources\.projects\search\com.python.pydev.analysis\v2_indexcache
+learn.models|1449206874303|C:\Users\CB-Ye\my_workspace\virtualenvs\env1\mysite\learn\models.py
+learn.tests|1447914279795|C:\Users\CB-Ye\my_workspace\virtualenvs\env1\mysite\learn\tests.py
+mysite.__init__|1447913923526|C:\Users\CB-Ye\my_workspace\virtualenvs\env1\mysite\mysite\__init__.py
+learn.views|1450066219489|C:\Users\CB-Ye\my_workspace\virtualenvs\env1\mysite\learn\views.py
+mysite.urls|1449568823271|C:\Users\CB-Ye\my_workspace\virtualenvs\env1\mysite\mysite\urls.py
+mysite.wsgi|1447913923523|C:\Users\CB-Ye\my_workspace\virtualenvs\env1\mysite\mysite\wsgi.py
+learn.__init__|1447914279801|C:\Users\CB-Ye\my_workspace\virtualenvs\env1\mysite\learn\__init__.py
+learn.migrations.__init__|1447914279807|C:\Users\CB-Ye\my_workspace\virtualenvs\env1\mysite\learn\migrations\__init__.py
+mysite.settings|1448877297751|C:\Users\CB-Ye\my_workspace\virtualenvs\env1\mysite\mysite\settings.py
+learn.admin|1447914279787|C:\Users\CB-Ye\my_workspace\virtualenvs\env1\mysite\learn\admin.py
+manage|1447913923510|C:\Users\CB-Ye\my_workspace\virtualenvs\env1\mysite\manage.py
+-- END DISKCACHE
+-- START DICTIONARY
+6
+4=learn.models
+3=learn.views
+5=mysite.urls
+2=mysite.wsgi
+6=smzdm_fx_item
+1=mysite.settings
+-- END DICTIONARY
+-- START TREE 1
+21
+all|1|ALLOWED_HOSTS!11@
+app|1|application!19@
+bas|1|BASE_DIR!11@
+dat|1|DATABASES!11@
+dbn|1|DBNAME!11@
+deb|1|DEBUG!11@
+det|1|detail!26@
+hom|1|home!26@
+ins|1|INSTALLED_APPS!11@
+lan|1|LANGUAGE_CODE!11@
+mid|1|MIDDLEWARE_CLASSES!11@
+roo|1|ROOT_URLCONF!11@
+sec|1|SECRET_KEY!11@
+sho|1|show!26@
+smz|1|smzdm_fx_item!33@
+sta|1|STATIC_URL!11@
+tem|1|TEMPLATES!11@
+tim|1|TIME_ZONE!11@
+url|1|urlpatterns!43@
+use|3|USE_I18N!11@USE_TZ!11@USE_L10N!11@
+wsg|1|WSGI_APPLICATION!11@
+-- END TREE
+-- START TREE 2
+16
+art|2|article_url!6&35@article_time!6&35@
+bad|1|bad_count!6&35@
+bao|1|baoliao_content!6&35@
+bra|1|brandname!6&35@
+cat|1|categoryid!6&35@
+com|1|comment_count!6&35@
+fav|1|fav_count!6&35@
+goo|1|good_count!6&35@
+hre|1|href!6&35@
+ima|1|image!6&35@
+ite|2|itemid!6&35@item_description!6&35@
+nam|1|name!6&35@
+ori|3|originmall!6&35@originmallurl!6&35@originprice!6&35@
+pri|1|price!6&35@
+upd|1|updatetime!6&35@
+you|1|youhui_content!6&35@
+-- END TREE

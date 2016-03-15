@@ -1,0 +1,66 @@
+-- VERSION_4
+-- START DISKCACHE
+C:\Users\CB-Ye\my_workspace\myspiders\.metadata\.plugins\org.eclipse.core.resources\.projects\crawlerSlaver01\com.python.pydev.analysis\v2_indexcache
+crawlerSlave01.spiders.slaver02|1453448171931|C:\Users\CB-Ye\my_workspace\distribute_crawlers\crawlerSlave01\crawlerSlave01\spiders\slaver02.py
+crawlerSlave01.spiders.slaver01|1455764012896|C:\Users\CB-Ye\my_workspace\distribute_crawlers\crawlerSlave01\crawlerSlave01\spiders\slaver01.py
+crawlerSlave01.pipelines|1453441177434|C:\Users\CB-Ye\my_workspace\distribute_crawlers\crawlerSlave01\crawlerSlave01\pipelines.py
+utils.__init__|1453441448991|C:\Users\CB-Ye\my_workspace\distribute_crawlers\crawlerSlave01\utils\__init__.py
+conf.__init__|1453441342957|C:\Users\CB-Ye\my_workspace\distribute_crawlers\crawlerSlave01\conf\__init__.py
+conf.config|1453441408435|C:\Users\CB-Ye\my_workspace\distribute_crawlers\crawlerSlave01\conf\config.py
+utils.send_to_queue|1455763809554|C:\Users\CB-Ye\my_workspace\distribute_crawlers\crawlerSlave01\utils\send_to_queue.py
+crawlerSlave01.spiders.__init__|1441676494676|C:\Users\CB-Ye\my_workspace\distribute_crawlers\crawlerSlave01\crawlerSlave01\spiders\__init__.py
+crawlerSlave01.items|1453441177433|C:\Users\CB-Ye\my_workspace\distribute_crawlers\crawlerSlave01\crawlerSlave01\items.py
+crawlerSlave01.settings|1455764403640|C:\Users\CB-Ye\my_workspace\distribute_crawlers\crawlerSlave01\crawlerSlave01\settings.py
+items.item|1453441926916|C:\Users\CB-Ye\my_workspace\distribute_crawlers\crawlerSlave01\items\item.py
+utils.net_util|1453456214256|C:\Users\CB-Ye\my_workspace\distribute_crawlers\crawlerSlave01\utils\net_util.py
+items.__init__|1453441900990|C:\Users\CB-Ye\my_workspace\distribute_crawlers\crawlerSlave01\items\__init__.py
+crawlerSlave01.__init__|1441676494665|C:\Users\CB-Ye\my_workspace\distribute_crawlers\crawlerSlave01\crawlerSlave01\__init__.py
+-- END DISKCACHE
+-- START DICTIONARY
+13
+8=crawlerSlave01.spiders.slaver02
+9=crawlerSlave01.spiders.slaver01
+3=crawlerSlave01.pipelines
+4=conf.config
+7=utils.send_to_queue
+10=smzdmFx_urls_Spider
+11=Item
+13=Crawlerslave01Pipeline
+1=crawlerSlave01.settings
+2=crawlerSlave01.items
+5=items.item
+6=utils.net_util
+12=Item.createItemdic
+-- END DICTIONARY
+-- START TREE 1
+11
+bot|1|BOT_NAME!11@
+cra|2|Crawlerslave01Item!17@Crawlerslave01Pipeline!25@
+fir|3|first_mongodb_port!35@first_mongodb!35@first_mongodb_domain!35@
+ite|2|Item!41@ITEM_PIPELINES!11@
+loa|3|loadHtmlNoproxy!50@loadHtmlSelector!50@loadHtmlProxy!50@
+new|1|NEWSPIDER_MODULE!11@
+red|3|redisdb!35@REDIS_HOST!11@REDIS_PORT!11@
+sch|4|SCHEDULER!11@SCHEDULER_IDLE_BEFORE_CLOSE!11@SCHEDULER_PERSIST!11@SCHEDULER_QUEUE_CLASS!11@
+sen|1|sendCrawlItemsToQueue!58@
+smz|2|smzdmFx_urls_Spider!65@smzdmFx_urls_Spider!73@
+spi|1|SPIDER_MODULES!11@
+-- END TREE
+-- START TREE 2
+15
+all|2|allowed_domains!10&67@allowed_domains!10&75@
+bra|1|brandname!11&43@
+cat|1|categoryid!11&43@
+cre|1|createItemdic!11&42@
+dat|2|database!10&67@database!10&75@
+hre|1|href!11&43@
+ima|1|image!11&43@
+ite|3|itemid!11&43@item_collection_name!10&67@item_collection_name!10&75@
+nam|3|name!10&75@name!10&67@name!11&43@
+ori|2|originprice!11&43@originprice!12&43@
+par|4|parse!10&66@parseItems!10&66@parse!10&74@parseItems!10&74@
+pri|1|price!11&43@
+pro|1|process_item!13&26@
+sta|2|start_urls!10&67@start_urls!10&75@
+upd|2|updatetime!11&43@updatetime!12&43@
+-- END TREE

@@ -1,0 +1,52 @@
+# -*- coding: utf-8 -*-
+
+try:
+    import cPickle as pickle
+except ImportError:
+    import pickle
+
+class Base(object):
+    """Per-spider queue/stack base class"""
+    
+    
+    def __init__(self, server, spider, key):
+        """ Initialize per-spider redis queue.
+        
+        Parameters:
+            server: redis connection
+            spider: spider instance
+            key: key for this queue
+        """
+        
+        self.server = server
+        self.spider = spider
+        self.key = key % {'spider': spider.name}
+        
+        
+    def _encode_request(self, request):
+        """Encode a request object"""
+        return pickle.dumps()
+        
+    def _decode_request(self, encoded_request):
+        """Decode a request previously encoded"""
+        
+        
+    def __len__(self):
+        """Return the length od the queue"""
+        raise NotImplementedError
+    
+    
+    def push(self, request):
+        """Push a request"""
+        raise NotImplementedError
+    
+    
+    def pop(self):
+        """Pop a request"""
+        raise NotImplementedError
+    
+    
+    def clear(self):
+        """Clear queue/stack"""
+        self.server.delete(self.key)
+    

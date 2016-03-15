@@ -1,0 +1,8 @@
+INSTUPtutorial.utils.net_util
+\\CAIBO\Share\spider_deals\tutorial\utils\net_util.py
+INFOS:&&2|1|2|0&&2|3|2|0&&2|4|2|0&&2|5|2|0
+loadJSONDic=1
+tutorial.utils.net_util=2
+loadXMLDom=3
+loadHTMLSelector2=5
+loadHTMLSelector=4
