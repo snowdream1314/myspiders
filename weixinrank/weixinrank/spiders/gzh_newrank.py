@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
-from scrapy.spiders import Spider
 from bs4 import BeautifulSoup
-from utils.load_content import load_content
+from scrapy.spiders import Spider
+
+from utils import load_content
+
 
 class gzh_newrank_spider(Spider):
     name = "gzh_new"

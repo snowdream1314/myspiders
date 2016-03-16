@@ -1,0 +1,4 @@
+eclipse.preferences.version=1
+encoding//spider_wxhui/conf/config.py=utf-8
+encoding//spider_wxhui/spiders/gzh_newrank.py=utf-8
+encoding//spider_wxhui/utils/load_content.py=utf-8
